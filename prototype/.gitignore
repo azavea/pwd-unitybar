@@ -1,0 +1,17 @@
+# MacOS
+.DS_Store
+
+# SASS
+.sass-cache/
+
+# NPM
+node_modules/
+
+# Output
+css/
+
+# Logs
+*.log
+
+# Temp
+tmp

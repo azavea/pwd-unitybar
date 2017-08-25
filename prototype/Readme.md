@@ -1,6 +1,24 @@
-# NAME OF PROTOTYPE
-Mostly HTML and SASS. Plus a bit of JS to demonstrate moving between states of
-the app.
+# PWD Unity Bar Prototype
+
+Parameters
+- app {parcelViewer, creditsExplorer, retrofitMap, retrofitCampaign}
+- theme ('blue', 'white', {backgroundColor, foregroundColor, logoUrl})
+- Public vs Internal (public)
+    - Internal = purple theme unless custom
+- hasLogo (yes)
+- hasSearch (yes)
+- searchPlaceholder ("Search")
+- hasMapAction (yes)
+- onClickMap
+- hasHelpAction (yes)
+- onClickHelp
+- customActions {icon, title, onClick}
+- isAuth (no)
+    - Auth has menu
+    - Unauth has no menu
+- hasSettings (yes)
+- onClickSettings
+- customMenuOptions {name, onClick}
 
 ---
 

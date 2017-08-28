@@ -1,14 +1,31 @@
 .pwd-unity-bar .app-actions {
+    display: flex;
+    position: relative;
+    flex-flow: row nowrap;
+    align-items: center;
+    justify-content: flex-end;
 
     > .search-form {
-
+        height: 38px;
+        margin: auto 10px;
     }
 
     > .link {
+        @include delinkify;
+        width: 24px;
+        height: 18px;
+        margin: auto 10px;
 
+        &.-map {
+            @include replace-with-image($pwdub-icon-map, 24px 18px);
+        }
+
+        &.-help {
+            @include replace-with-image($pwdub-icon-help, 24px 18px);
+        }
     }
 
     > .additional-actions {
-
+        margin: auto 10px;
     }
 }

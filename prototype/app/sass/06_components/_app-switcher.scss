@@ -1,14 +1,48 @@
 .pwd-unity-bar .app-switcher {
+    display: flex;
+    position: relative;
+    flex-flow: row nowrap;
+    align-items: center;
+    align-self: stretch;
+    justify-content: flex-start;
 
     > .appname {
+        order: 1;
+        font-size: 16px;
+        font-weight: bold;
+        line-height: 1.2;
 
+        @include mobile {
+            font-size: 14px;
+        }
     }
 
     > .toggle {
-
+        @include debuttonify;
+        @include replace-with-image($pwdub-icon-menu, 24px 18px);
+        display: block;
+        align-self: stretch;
+        width: $pwdub-app-switcher-gutter;
+        cursor: pointer;
     }
 
     > .app-switcher-menu {
+        @include invisible;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 90vw;
+        max-width: 1024px;
+        z-index: 10;
+    }
+}
 
+.pwd-unity-bar .app-switcher.-on {
+    > .toggle {
+        background-color: $pwdub-active;
+    }
+
+    > .app-switcher-menu {
+        @include visible;
     }
 }

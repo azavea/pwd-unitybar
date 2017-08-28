@@ -1,3 +1,8 @@
 .pwd-unity-bar .logo {
+    @include delinkify;
+    @include replace-with-image($pwdub-image-logo-blue, contain);
 
+    @include retina {
+        @include replace-with-image($pwdub-image-logo-blue-2x, contain);
+    }
 }

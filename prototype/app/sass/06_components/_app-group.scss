@@ -1,20 +1,58 @@
 .pwd-unity-bar .app-group {
+    display: flex;
+    flex-flow: row wrap;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding-top: 24px;
+    padding-bottom: 24px;
 
     > .heading {
+        width: 100%;
+        margin: 0;
+        margin-bottom: 16px;
+        margin-left: $pwdub-app-switcher-gutter;
+        color: $pwdub-black;
+        font-size: 14px;
+        font-weight: bold;
 
+        @include mobile {
+            font-size: 11px;
+        }
     }
 
     .app-summary {
+        margin: 0 $pwdub-app-switcher-gutter;
 
         > .app-name {
+            margin: 0;
+            margin-bottom: 8px;
+            font-size: 17px;
+            font-weight: bold;
 
-            > .link {
+            @include mobile {
+                font-size: 16px;
+            }
 
+            > .link:not(.-on) {
+                @include delinkify($pwdub-blue);
+            }
+
+            > .link.-on {
+                @include delinkify($pwdub-purple);
+                position: relative;
+                padding-left: 24px;
+
+                &::before {
+                    position: absolute;
+                    left: 0;
+                    content: '★';
+                }
             }
         }
 
         > .desc {
-
+            color: $pwdub-black;
+            font-size: 13px;
         }
     }
 }

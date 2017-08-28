@@ -1,6 +1,13 @@
 # PWD Unity Bar Prototype
 
 TODO
+- switch icons to inline svg (or `<use>`d within same file)
+  - then use css `fill:` for themes
+  - a11y: https://css-tricks.com/accessible-svgs/
+- js for click handling (jquery ok, bc react component will supersede)
+    - app switcher toggle
+    - additional actions toggle
+    - search field focus
 - output (pwd-unity-bar.scss) is single scss file with inline icons and images
 - !default variables
 - elaborate on potential component parameters and what they mean and do

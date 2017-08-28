@@ -1,13 +1,28 @@
 .pwd-unity-bar .additional-actions {
 
     > .toggle {
-
+        @include debuttonify;
+        @include replace-with-image($pwdub-icon-caret-down, 24px 18px);
+        width: 24px;
+        height: 18px;
+        cursor: pointer;
     }
 
     > .actions-menu {
+        @include invisible;
+        position: absolute;
+
+        &.-show {
+            @include visible;
+        }
 
         > .listitem {
+            font-size: 13px;
+            font-weight: bold;
 
+            @include mobile {
+                font-size: 15px;
+            }
         }
 
         > .listitem > .link {

@@ -5,6 +5,28 @@
     }
 }
 
+@mixin debuttonify {
+    margin: 0;
+    border: 0;
+    padding: 0;
+    display: inline-block;
+    vertical-align: middle;
+    white-space: normal;
+    background: none;
+    line-height: 1;
+    appearance: none;
+}
+
+@mixin replace-with-image($image, $size : contain) {
+    text-indent: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    background-image: $image;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: $size;
+}
+
 @mixin invisible {
     opacity: 0;
     pointer-events: none;

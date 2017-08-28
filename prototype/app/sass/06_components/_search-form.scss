@@ -1,10 +1,35 @@
 .pwd-unity-bar .search-form {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: stretch;
+    justify-content: flex-start;
 
     > .field {
-
+        padding-left: 32px;
+        border: 2px solid $pwdub-blue;
+        border-radius: 0;
+        background-image: $pwdub-icon-search;
+        background-repeat: no-repeat;
+        background-position: 8px center;
+        background-size: 16px;
+        font: inherit;
+        font-size: 15px;
     }
 
     > .action {
+        @include invisible;
+        @include debuttonify;
+        position: absolute;
+        padding: 0 8px;
+        border: 2px solid $pwdub-blue;
+        border-left-width: 0;
+        background-color: $pwdub-blue;
+        color: $pwdub-white;
+        font: inherit;
+        font-size: 15px;
+    }
 
+    > .field:focus + .action {
+        @include visible;
     }
 }

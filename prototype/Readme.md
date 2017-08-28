@@ -1,5 +1,10 @@
 # PWD Unity Bar Prototype
 
+TODO
+- output (pwd-unity-bar.scss) is single scss file with inline icons and images
+- !default variables
+- elaborate on potential component parameters and what they mean and do
+
 Parameters
 - app {parcelViewer, creditsExplorer, retrofitMap, retrofitCampaign}
 - theme ('blue', 'white', {backgroundColor, foregroundColor, logoUrl})

@@ -9,7 +9,7 @@ Parameters
 - app {parcelViewer, creditsExplorer, retrofitMap, retrofitCampaign}
 - theme ('blue', 'white', {backgroundColor, foregroundColor, logoUrl})
 - Public vs Internal (public)
-    - Internal = purple theme unless custom
+    - Internal = -theme-internal. Overrides 'theme'
 - hasLogo (yes)
 - hasSearch (yes)
 - searchPlaceholder ("Search")
@@ -24,6 +24,7 @@ Parameters
 - hasSettings (yes)
 - onClickSettings
 - customMenuOptions {name, onClick}
+
 
 ---
 

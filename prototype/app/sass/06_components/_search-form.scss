@@ -15,8 +15,9 @@
         left: 5px;
         width: 24px;
         height: 18px;
-        z-index: 10;
+        z-index: 2;
         pointer-events: none;
+        fill: $pwdub-blue;
 
         @include mobile {
             left: 4px;

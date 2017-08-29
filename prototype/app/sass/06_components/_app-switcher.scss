@@ -68,6 +68,10 @@
     > .toggle {
         background-color: $pwdub-active;
 
+        > .icon {
+            fill: $pwdub-white;
+        }
+
         @include mobile {
             > .icon.-menu {
                 @include remove;
@@ -75,6 +79,7 @@
 
             > .icon.-back {
                 @include restore;
+                fill: $pwdub-white;
             }
         }
     }

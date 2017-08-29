@@ -1,10 +1,5 @@
 # PWD Unity Bar Prototype
 
-- a11y
-- themes
-- switch icons to inline svg (or `<use>`d within same file)
-  - then use css `fill:` for color/themes
-  - a11y: https://css-tricks.com/accessible-svgs/
 - js for click handling (jquery ok, bc react component will supersede)
     - app switcher toggle
     - additional actions toggle

@@ -71,6 +71,10 @@
 .pwd-unity-bar .additional-actions.-on {
     > .toggle {
         background-color: $pwdub-active;
+
+        > .icon {
+            fill: $pwdub-white;
+        }
     }
 
     > .actions-menu {

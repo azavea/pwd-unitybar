@@ -47,3 +47,27 @@
         flex: none;
     }
 }
+
+.pwd-unity-bar .app-actions.-search {
+    z-index: 20;
+
+    > .link,
+    > .additional-actions {
+        @include remove;
+    }
+
+    > .search-form {
+        position: relative;
+        flex-basis: 100%;
+        width: 100%;
+        z-index: 2;
+    }
+
+    @include mobile {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+    }
+}

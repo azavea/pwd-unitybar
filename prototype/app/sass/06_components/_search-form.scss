@@ -21,6 +21,7 @@
 
         @include mobile {
             left: 4px;
+            cursor: pointer;
         }
     }
 
@@ -31,6 +32,7 @@
         padding-left: 32px;
         border: 2px solid $pwdub-blue;
         border-radius: 0;
+        background-color: $pwdub-white;
         font: inherit;
         font-size: 15px;
 
@@ -42,9 +44,9 @@
     > .action {
         @include remove;
         @include debuttonify;
-        height: 38px;
+        height: 34px;
         padding: 0 8px;
-        border: 2px solid $pwdub-blue;
+        border: 2px solid $pwdub-white;
         border-left-width: 0;
         background-color: $pwdub-blue;
         color: $pwdub-white;
@@ -54,5 +56,41 @@
 
     > .field:focus + .action {
         @include restore;
+    }
+}
+
+.pwd-unity-bar .app-actions.-search > .search-form {
+    @include mobile {
+        padding: 0 8px;
+    }
+
+    > .icon {
+        @include mobile {
+            right: 16px;
+            left: auto;
+            fill: $pwdub-white;
+        }
+    }
+
+    > .field {
+        border-right-width: 0;
+
+        @include mobile {
+            @include restore;
+            padding-left: 12px;
+        }
+    }
+
+    > .action {
+        @include restore;
+
+        @include mobile {
+            padding: 0;
+            width: 44px;
+            text-align: left;
+            text-indent: 100%;
+            white-space: nowrap;
+            overflow: hidden;
+        }
     }
 }

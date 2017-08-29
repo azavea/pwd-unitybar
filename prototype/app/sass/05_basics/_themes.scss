@@ -13,6 +13,19 @@
             @include replace-with-image($pwdub-image-logo-blue-2x, contain);
         }
     }
+
+    .search-form {
+        > .icon {
+            @include mobile {
+                fill: $pwdub-blue;
+            }
+        }
+
+        > .action {
+            height: 38px;
+            border-color: $pwdub-blue;
+        }
+    }
 }
 
 .pwd-unity-bar.pwdub-theme-blue {
@@ -28,6 +41,24 @@
 
         @include retina {
             @include replace-with-image($pwdub-image-logo-white-2x, contain);
+        }
+    }
+
+    .search-form {
+        > .icon {
+            fill: $pwdub-blue;
+
+            @include mobile {
+                fill: $pwdub-white;
+            }
+        }
+
+        > .field {
+            border-color: $pwdub-blue;
+        }
+
+        > .action {
+            background-color: $pwdub-blue;
         }
     }
 }
@@ -51,10 +82,18 @@
     .search-form {
         > .icon {
             fill: $pwdub-purple;
+
+            @include mobile {
+                fill: $pwdub-white;
+            }
         }
 
         > .field {
             border-color: $pwdub-purple;
+        }
+
+        > .action {
+            background-color: $pwdub-purple;
         }
     }
 }

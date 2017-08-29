@@ -2,26 +2,53 @@
     display: flex;
     position: relative;
     flex-flow: row nowrap;
-    align-items: stretch;
-    justify-content: flex-end;
+    align-items: center;
+    justify-content: flex-start;
+
+    @include mobile {
+        width: $pwdub-app-switcher-gutter-mobile;
+        background-position: center;
+    }
+
+    &::before {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        width: $pwdub-app-switcher-gutter;
+        height: 100%;
+        background-image: $pwdub-icon-search;
+        background-repeat: no-repeat;
+        background-position: 10px center;
+        background-size: 16px;
+        content: ' ';
+        pointer-events: none;
+
+        @include mobile {
+            width: 100%;
+            background-position: center;
+        }
+    }
 
     > .field {
-        flex: auto;
+        width: 100%;
         min-width: 100px;
+        height: 38px;
         padding-left: 32px;
         border: 2px solid $pwdub-blue;
         border-radius: 0;
-        background-image: $pwdub-icon-search;
-        background-repeat: no-repeat;
-        background-position: 8px center;
-        background-size: 16px;
         font: inherit;
         font-size: 15px;
+
+        @include mobile {
+            @include remove;
+        }
     }
 
     > .action {
         @include remove;
         @include debuttonify;
+        height: 38px;
         padding: 0 8px;
         border: 2px solid $pwdub-blue;
         border-left-width: 0;

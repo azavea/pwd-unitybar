@@ -6,6 +6,11 @@
     padding-top: 24px;
     padding-bottom: 24px;
 
+    @include tablet {
+        padding-top: 16px;
+        padding-bottom: 8px;
+    }
+
     > .heading {
         width: 100%;
         margin: 0;
@@ -15,6 +20,14 @@
         font-size: 14px;
         font-weight: bold;
 
+        @include responsive(800px) {
+            font-size: 12px;
+        }
+
+        @include tablet {
+            margin-left: 16px;
+        }
+
         @include mobile {
             font-size: 11px;
         }
@@ -23,11 +36,23 @@
     .app-summary {
         margin: 0 $pwdub-app-switcher-gutter;
 
+        @include tablet {
+            margin: 0 16px;
+
+            & + .app-summary {
+                margin-top: 8px;
+            }
+        }
+
         > .app-name {
             margin: 0;
             margin-bottom: 8px;
             font-size: 17px;
             font-weight: bold;
+
+            @include tablet {
+                margin-bottom: 0;
+            }
 
             @include mobile {
                 font-size: 16px;

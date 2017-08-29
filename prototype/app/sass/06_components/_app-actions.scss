@@ -2,21 +2,27 @@
     display: flex;
     position: relative;
     flex-flow: row nowrap;
-    align-items: center;
+    align-items: stretch;
     justify-content: flex-end;
 
     > .search-form {
-        flex: 0 1 100px;
-        height: 38px;
-        margin: auto 10px;
+        flex: 0 1 160px;
+        margin: auto 8px auto 32px;
+
+        @include mobile {
+            margin: 0;
+            flex-basis: $pwdub-app-switcher-gutter-mobile;
+        }
     }
 
     > .link {
         @include delinkify;
         flex: none;
-        width: 24px;
-        height: 18px;
-        margin: auto 10px;
+        width: $pwdub-app-switcher-gutter;
+
+        &:hover {
+            background-color: $pwdub-action-hover-background-color;
+        }
 
         &.-map {
             @include replace-with-image($pwdub-icon-map, 24px 18px);
@@ -25,10 +31,13 @@
         &.-help {
             @include replace-with-image($pwdub-icon-help, 24px 18px);
         }
+
+        @include mobile {
+            width: $pwdub-app-switcher-gutter-mobile;
+        }
     }
 
     > .additional-actions {
         flex: none;
-        margin: auto 10px;
     }
 }

@@ -1,12 +1,26 @@
 .pwd-unity-bar .additional-actions {
+    display: flex;
     position: relative;
+    flex-flow: row nowrap;
+    align-items: center;
+    align-self: stretch;
+    justify-content: flex-start;
 
     > .toggle {
         @include debuttonify;
         @include replace-with-image($pwdub-icon-caret-down, 24px 18px);
-        width: 24px;
-        height: 18px;
+        display: block;
+        align-self: stretch;
+        width: $pwdub-app-switcher-gutter;
         cursor: pointer;
+
+        &:hover {
+            background-color: $pwdub-action-hover-background-color;
+        }
+
+        @include mobile {
+            width: $pwdub-app-switcher-gutter-mobile;
+        }
     }
 
     > .actions-menu {
@@ -14,22 +28,48 @@
         position: absolute;
         top: 100%;
         right: 0;
+        margin: 0;
+        padding: 8px 16px;
+        background-color: $pwdub-active;
+        list-style: none;
+        text-align: right;
+
+        @include mobile {
+            width: 100vw;
+            padding: 24px;
+        }
 
         &.-show {
             @include visible;
         }
 
         > .listitem {
-            font-size: 13px;
+            margin: 0;
+            padding: 12px 16px;
+            font-size: 14px;
             font-weight: bold;
+            line-height: 1;
+            text-transform: uppercase;
+            white-space: nowrap;
 
             @include mobile {
+                padding: 16px 16px;
                 font-size: 15px;
             }
         }
 
         > .listitem > .link {
-
+            @include delinkify($pwdub-white);
         }
+    }
+}
+
+.pwd-unity-bar .additional-actions.-on {
+    > .toggle {
+        background-color: $pwdub-active;
+    }
+
+    > .actions-menu {
+        @include visible;
     }
 }

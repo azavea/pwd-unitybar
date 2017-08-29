@@ -44,8 +44,20 @@
     display: initial;
 }
 
+@mixin responsive($breakpoint : $pwdub-breakpoint-mobile) {
+    @media (max-width: #{$breakpoint}) {
+        @content;
+    }
+}
+
 @mixin mobile {
     @media (max-width: #{$pwdub-breakpoint-mobile}) {
+        @content;
+    }
+}
+
+@mixin tablet {
+    @media (max-width: #{$pwdub-breakpoint-tablet}) {
         @content;
     }
 }

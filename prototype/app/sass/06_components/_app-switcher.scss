@@ -18,13 +18,21 @@
 
     > .toggle {
         @include debuttonify;
-        @include replace-with-image($pwdub-icon-menu, 24px 18px);
         display: block;
         align-self: stretch;
         width: $pwdub-app-switcher-gutter;
         margin-right: 8px;
         cursor: pointer;
         z-index: 11;
+
+        > .icon {
+            width: 24px;
+            height: 18px;
+
+            &.-back {
+                @include remove;
+            }
+        }
 
         &:hover {
             background-color: $pwdub-action-hover-background-color;
@@ -61,7 +69,13 @@
         background-color: $pwdub-active;
 
         @include mobile {
-            background-image: $pwdub-icon-back;
+            > .icon.-menu {
+                @include remove;
+            }
+
+            > .icon.-back {
+                @include restore;
+            }
         }
     }
 

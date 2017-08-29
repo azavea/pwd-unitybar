@@ -8,11 +8,15 @@
 
     > .toggle {
         @include debuttonify;
-        @include replace-with-image($pwdub-icon-caret-down, 24px 18px);
         display: block;
         align-self: stretch;
         width: $pwdub-app-switcher-gutter;
         cursor: pointer;
+
+        > .icon {
+            width: 24px;
+            height: 18px;
+        }
 
         &:hover {
             background-color: $pwdub-action-hover-background-color;

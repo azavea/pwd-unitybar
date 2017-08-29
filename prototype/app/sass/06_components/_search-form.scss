@@ -10,23 +10,16 @@
         background-position: center;
     }
 
-    &::before {
+    > .icon {
         position: absolute;
-        top: 0;
-        bottom: 0;
-        left: 0;
-        width: $pwdub-app-switcher-gutter;
-        height: 100%;
-        background-image: $pwdub-icon-search;
-        background-repeat: no-repeat;
-        background-position: 10px center;
-        background-size: 16px;
-        content: ' ';
+        left: 5px;
+        width: 24px;
+        height: 18px;
+        z-index: 10;
         pointer-events: none;
 
         @include mobile {
-            width: 100%;
-            background-position: center;
+            left: 4px;
         }
     }
 

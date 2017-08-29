@@ -1,29 +1,38 @@
 $(function() {
-    const unitybar = $('.pwd-unity-bar');
-
-    activateSearch = function() {
-        $('.app-actions').addClass('-search');
-    }
-
-    deactivateSearch = function() {
-        $('.app-actions').removeClass('-search');
-    }
-
     // THEMES
     $('.demo-panel > .themes > button').on('click', function() {
-        unitybar
+        $('.pwd-unity-bar')
             .removeClass('pwdub-theme-blue pwdub-theme-white pwdub-theme-internal')
             .addClass('pwdub-theme-' + $(this).attr('name'));
     });
 
     // APP SWITCHER
     $('.app-switcher > .toggle').on('click', function() {
-        $('.app-switcher').toggleClass('-on');
+        const $appSwitcher = $('.app-switcher');
+        if ($appSwitcher.hasClass('-on')) {
+            $appSwitcher
+                .removeClass('-on')
+                .find('.app-switcher-menu a').attr('tabindex', '-1');
+        } else {
+            $appSwitcher
+                .addClass('-on')
+                .find('.app-switcher-menu a').attr('tabindex', '0');
+        }
     });
 
-    // MORE ACTIONS
+
+    // MORE MENU
     $('.app-actions > .additional-actions > .toggle').on('click', function() {
-        $('.app-actions > .additional-actions').toggleClass('-on');
+        const $additionalActions = $('.app-actions > .additional-actions');
+        if ($additionalActions.hasClass('-on')) {
+            $additionalActions
+                .removeClass('-on')
+                .find('a').attr('tabindex', '-1');
+        } else {
+            $additionalActions
+                .addClass('-on')
+                .find('a').attr('tabindex', '0');
+        }
     });
 
     // SEARCH

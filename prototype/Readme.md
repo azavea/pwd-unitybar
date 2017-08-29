@@ -1,12 +1,10 @@
 # PWD Unity Bar Prototype
 
-- js for click handling (jquery ok, bc react component will supersede)
 - manage focus
-    - inert polyfill?
     - focus-ring polyfill?
 - output (pwd-unity-bar.scss) is single scss file with inline icons and images
 - !default variables
-- elaborate on potential component parameters and what they mean and do
+- elaborate on potential component params
 - search behavior
   - autocomplete
   - suggestions

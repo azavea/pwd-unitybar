@@ -1,4 +1,5 @@
 .pwd-unity-bar .additional-actions {
+    position: relative;
 
     > .toggle {
         @include debuttonify;
@@ -11,6 +12,8 @@
     > .actions-menu {
         @include invisible;
         position: absolute;
+        top: 100%;
+        right: 0;
 
         &.-show {
             @include visible;

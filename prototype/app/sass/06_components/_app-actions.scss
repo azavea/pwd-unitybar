@@ -6,12 +6,14 @@
     justify-content: flex-end;
 
     > .search-form {
+        flex: 0 1 100px;
         height: 38px;
         margin: auto 10px;
     }
 
     > .link {
         @include delinkify;
+        flex: none;
         width: 24px;
         height: 18px;
         margin: auto 10px;
@@ -26,6 +28,7 @@
     }
 
     > .additional-actions {
+        flex: none;
         margin: auto 10px;
     }
 }

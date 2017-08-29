@@ -1,10 +1,13 @@
 .pwd-unity-bar .search-form {
     display: flex;
+    position: relative;
     flex-flow: row nowrap;
     align-items: stretch;
-    justify-content: flex-start;
+    justify-content: flex-end;
 
     > .field {
+        flex: auto;
+        min-width: 100px;
         padding-left: 32px;
         border: 2px solid $pwdub-blue;
         border-radius: 0;
@@ -17,9 +20,8 @@
     }
 
     > .action {
-        @include invisible;
+        @include remove;
         @include debuttonify;
-        position: absolute;
         padding: 0 8px;
         border: 2px solid $pwdub-blue;
         border-left-width: 0;
@@ -30,6 +32,6 @@
     }
 
     > .field:focus + .action {
-        @include visible;
+        @include restore;
     }
 }

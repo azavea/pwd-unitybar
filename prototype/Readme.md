@@ -1,8 +1,11 @@
 # PWD Unity Bar Prototype
 
-TODO
+
+- menus
+- mobile
+- a11y
 - switch icons to inline svg (or `<use>`d within same file)
-  - then use css `fill:` for themes
+  - then use css `fill:` for color/themes
   - a11y: https://css-tricks.com/accessible-svgs/
 - js for click handling (jquery ok, bc react component will supersede)
     - app switcher toggle
@@ -11,6 +14,10 @@ TODO
 - output (pwd-unity-bar.scss) is single scss file with inline icons and images
 - !default variables
 - elaborate on potential component parameters and what they mean and do
+- search behavior
+  - autocomplete
+  - suggestions
+  - keystrokes
 
 Parameters
 - app {parcelViewer, creditsExplorer, retrofitMap, retrofitCampaign}

@@ -9,7 +9,6 @@
     margin: 0;
     border: 0;
     padding: 0;
-    display: inline-block;
     vertical-align: middle;
     white-space: normal;
     background: none;
@@ -35,6 +34,14 @@
 @mixin visible {
     opacity: 1;
     pointer-events: auto;
+}
+
+@mixin remove {
+    display: none;
+}
+
+@mixin restore {
+    display: initial;
 }
 
 @mixin mobile {

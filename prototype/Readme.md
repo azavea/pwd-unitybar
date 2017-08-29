@@ -1,7 +1,6 @@
 # PWD Unity Bar Prototype
 
-- manage focus
-    - focus-ring polyfill?
+- revisit focus ring
 - output (pwd-unity-bar.scss) is single scss file with inline icons and images
 - !default variables
 - elaborate on potential component params

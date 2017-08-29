@@ -37,7 +37,7 @@
         font-size: 15px;
 
         @include mobile {
-            @include remove;
+            @include invisible;
         }
     }
 
@@ -76,7 +76,7 @@
         border-right-width: 0;
 
         @include mobile {
-            @include restore;
+            @include visible;
             padding-left: 12px;
         }
     }

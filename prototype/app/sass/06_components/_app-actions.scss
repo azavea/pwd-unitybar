@@ -53,14 +53,22 @@
 
     > .link,
     > .additional-actions {
-        @include remove;
+        @include invisible;
     }
 
     > .search-form {
-        position: relative;
-        flex-basis: 100%;
-        width: 100%;
+        position: absolute;
+        top: calc(50% - 19px);
+        right: 0;
+        left: 0;
+        flex-basis: 90%;
+        width: 90%;
         z-index: 2;
+
+        @include mobile {
+            flex-basis: 100%;
+            width: 100%;
+        }
     }
 
     @include mobile {

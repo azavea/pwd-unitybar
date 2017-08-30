@@ -702,6 +702,7 @@ $pwdub-z-index: 10000 !default;
 
     > .icon {
         position: absolute;
+        top: calc(50% - 9px);
         left: 5px;
         width: 24px;
         height: 18px;

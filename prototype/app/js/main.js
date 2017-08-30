@@ -106,12 +106,4 @@ $(function() {
             console.log('focus in');
             activateSearch(false);
         });
-
-    // $('.app-actions > .search-form > .field ')
-    //     .on('focus', function(){
-    //         activateSearch(false);
-    //     })
-    //     .on('blur', function(){
-    //         deactivateSearch();
-    // });
 });

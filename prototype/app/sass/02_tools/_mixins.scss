@@ -1,0 +1,69 @@
+@mixin delinkify($color : inherit) {
+    &:link, &:visited, &:focus, &:hover, &:active {
+        color: $color;
+        text-decoration: none;
+    }
+}
+
+@mixin debuttonify {
+    margin: 0;
+    border: 0;
+    padding: 0;
+    vertical-align: middle;
+    white-space: normal;
+    background: none;
+    line-height: 1;
+    appearance: none;
+}
+
+@mixin replace-with-image($image, $size : contain) {
+    text-indent: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    background-image: $image;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: $size;
+}
+
+@mixin invisible {
+    opacity: 0;
+    pointer-events: none;
+}
+
+@mixin visible {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+@mixin remove {
+    display: none;
+}
+
+@mixin restore {
+    display: initial;
+}
+
+@mixin responsive($breakpoint : $pwdub-breakpoint-mobile) {
+    @media (max-width: #{$breakpoint}) {
+        @content;
+    }
+}
+
+@mixin mobile {
+    @media (max-width: #{$pwdub-breakpoint-mobile}) {
+        @content;
+    }
+}
+
+@mixin tablet {
+    @media (max-width: #{$pwdub-breakpoint-tablet}) {
+        @content;
+    }
+}
+
+@mixin retina {
+    @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi), (min-resolution: 2dppx) {
+        @content;
+    }
+}

@@ -1,5 +1,47 @@
 # PWD Unity Bar Prototype
 
+This is a prototype of the PWD Unity Bar – a unified header for use across all
+Philadelphia Water Dept stormwater-related web apps.
+
+The html, sass, and behaviors of this prototype should be replicated in a
+reusable React component.
+
+## HTML
+
+index.html contains the unity bar html (`header.pwd-unity-bar`), along with
+some buttons for demoing the three main themes.
+
+In porting the prototype to React, let's discuss any deviations from the html
+as authored. Care was taken to make it semantic and accessible.
+
+## SASS
+
+As with most of our prototypes, the SASS is organized into a hierarchy of
+folders, with the most critical bits living in the components folder.
+
+Unlike most of our prototypes, however, one of the outputs of the `grunt`
+build process is a single monolithic .scss file (`pwd-unity-bar.scss`).
+
+In theory, this monolithic .scss file should be part of the React component,
+such that it can be included in each project's `sass/vendors` folder.
+
+In particular, this would allow each project to override the component's
+`!default` variables (in `sass/01_settings`), including:
+- $pwdub-background-color: $pwdub-blue !default;
+- $pwdub-foreground-color: $pwdub-white !default;
+- $pwdub-height: 56px !default;
+- $pwdub-gutter: 8px !default;
+- $pwdub-app-switcher-gutter: 56px !default;
+- $pwdub-app-switcher-gutter-mobile: 40px !default;
+- $pwdub-breakpoint-mobile: 480px !default;
+- $pwdub-breakpoint-tablet: 640px !default;
+- $pwdub-z-index: 10000 !default;
+
+
+
+## Themeable
+
+
 - output (pwd-unity-bar.scss) is single scss file with inline icons and images
 - !default variables
 - elaborate on potential component params
@@ -39,7 +81,7 @@ Parameters
 Run `npm install` in the project directory to install required packages.
 
 Run `grunt` to watch for file changes and automatically open browser to
-`localhost:3000`.
+`localhost:3000` to see the demo.
 
 ---
 

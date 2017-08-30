@@ -8,7 +8,7 @@ module.exports = {
 
 	css: {
         files: ['app/**/*.scss'],
-        tasks: ['sass', 'postcss'],
+        tasks: ['sass_import', 'exec', 'sass', 'postcss'],
         options: {
             spawn: false,
         }

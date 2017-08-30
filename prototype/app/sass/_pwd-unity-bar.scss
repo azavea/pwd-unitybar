@@ -1,26 +1,17 @@
-@import
-'01_settings/color',
-'01_settings/variables',
-'01_settings/images';
-
-@import
-'02_tools/mixins';
-
-@import
-'04_generics/box-sizing';
-
-@import
-'05_basics/type',
-'05_basics/themes';
-
-@import
-'06_components/logo',
-'06_components/app-switcher',
-'06_components/app-switcher-menu',
-'06_components/app-group',
-'06_components/app-actions',
-'06_components/additional-actions',
-'06_components/search-form';
-
-@import
-'07_layouts/pwd-unity-bar';
+@import '01_settings/_color';
+@import '01_settings/_images';
+@import '01_settings/_type';
+@import '01_settings/_variables';
+@import '02_tools/_functions';
+@import '02_tools/_mixins';
+@import '04_generics/_box-sizing';
+@import '05_basics/_themes';
+@import '05_basics/_type';
+@import '06_components/_additional-actions';
+@import '06_components/_app-actions';
+@import '06_components/_app-group';
+@import '06_components/_app-switcher-menu';
+@import '06_components/_app-switcher';
+@import '06_components/_logo';
+@import '06_components/_search-form';
+@import '07_layouts/_pwd-unity-bar';

@@ -1,6 +1,5 @@
 # PWD Unity Bar Prototype
 
-- revisit focus ring
 - output (pwd-unity-bar.scss) is single scss file with inline icons and images
 - !default variables
 - elaborate on potential component params
@@ -29,6 +28,10 @@ Parameters
 - onClickSettings
 - customMenuOptions {name, onClick}
 
+---
+
+## Future Work
+- Revisit focus ring
 
 ---
 
@@ -84,7 +87,3 @@ Some examples:
 
 No need to retain the actual code from `main.js` but be sure to replicate
 what it does.
-
-### Not in the prototype (yet)
-
-- Tbd

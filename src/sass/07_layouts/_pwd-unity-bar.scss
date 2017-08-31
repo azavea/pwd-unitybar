@@ -1,0 +1,30 @@
+.pwd-unity-bar {
+    display: flex;
+    position: relative;
+    flex-flow: row nowrap;
+    align-items: stretch;
+    justify-content: space-between;
+    width: 100%;
+    height: 56px;
+    padding: 0;
+    z-index: $pwdub-z-index;
+
+    > .app-switcher {
+        flex: 0 1 calc((100% - 85px)/2);
+    }
+
+    > .logo {
+        flex: none;
+        align-self: center;
+        width: 85px;
+        height: 38px;
+
+        @include mobile {
+            @include remove;
+        }
+    }
+
+    > .app-actions {
+        flex: 0 1 calc((100% - 85px)/2);
+    }
+}

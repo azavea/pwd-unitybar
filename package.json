@@ -1,0 +1,55 @@
+{
+  "name": "pwd-unitybar",
+  "version": "0.0.1",
+  "private": true,
+  "description": "Unified header bar for PWD Stormwater web apps",
+  "main": "index.js",
+  "scripts": {
+    "start": "node_modules/.bin/webpack-dev-server --config webpack.dev.config.js --progress --colors --host 0.0.0.0 --port 7777",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "postinstall": "npm rebuild node-sass --quiet --force"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/azavea/pwd-unitybar.git"
+  },
+  "author": "Azavea",
+  "bugs": {
+    "url": "https://github.com/azavea/pwd-unitybar/issues"
+  },
+  "homepage": "https://github.com/azavea/pwd-unitybar#readme",
+  "dependencies": {
+    "prop-types": "15.5.10",
+    "react": "15.6.1",
+    "react-dom": "15.6.1",
+    "react-onclickoutside": "6.5.0"
+  },
+  "devDependencies": {
+    "babel-cli": "6.26.0",
+    "babel-core": "6.26.0",
+    "babel-eslint": "7.2.3",
+    "babel-loader": "7.1.2",
+    "babel-plugin-transform-runtime": "6.23.0",
+    "babel-plugin-transform-class-properties": "6.24.1",
+    "babel-preset-es2015": "6.24.1",
+    "babel-preset-react": "6.24.1",
+    "babel-preset-react-hmre": "1.1.1",
+    "css-loader": "0.28.7",
+    "eslint": "3.9.1",
+    "eslint-config-airbnb": "13.0.0",
+    "eslint-import-resolver-webpack": "0.8.3",
+    "eslint-loader": "1.9.0",
+    "eslint-plugin-import": "2.7.0",
+    "eslint-plugin-jsx-a11y": "2.2.3",
+    "eslint-plugin-react": "7.3.0",
+    "file-loader": "0.11.2",
+    "html-loader": "0.5.1",
+    "html-webpack-plugin": "2.30.1",
+    "node-sass": "4.5.3",
+    "sass-loader": "6.0.6",
+    "style-loader": "0.18.2",
+    "url-loader": "0.5.9",
+    "webpack": "2.7.0",
+    "webpack-dev-server": "2.7.1"
+  }
+}

@@ -73,8 +73,8 @@ $(function() {
     // THEME SWITCHER
     $('.demo-panel > .themes > button').on('click', function() {
         $('.pwd-unity-bar')
-            .removeClass('pwdub-theme-blue pwdub-theme-white pwdub-theme-internal')
-            .addClass('pwdub-theme-' + $(this).attr('name'));
+            .removeClass('-pwdub-theme-blue -pwdub-theme-white -pwdub-theme-internal')
+            .addClass('-pwdub-theme-' + $(this).attr('name'));
     });
 
     // APP SWITCHER

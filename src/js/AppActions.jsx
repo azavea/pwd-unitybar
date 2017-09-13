@@ -47,6 +47,9 @@ export default function AppActions({
     handleSearchBoxChange,
 }) {
     const customActionElements = (() => {
+        if (searchBoxExpanded) {
+            return null;
+        }
         if (customActions) {
             if (customActions.length > 1 && (hasMapAction || hasHelpAction)) {
                 throw new Error(`Invalid UnityBar props: cannot supply two custom
@@ -67,7 +70,10 @@ export default function AppActions({
         return null;
     })();
 
-    const mapIconElement = hasMapAction && mapActionHandler ? (
+    // The `(!searchBoxValue)` check is here to remove the action elements from
+    // the DOM if the search box is expanded and users shouldn't be able to tab
+    // into them & otherwise ensure that they exist and can be tabbed into.
+    const mapIconElement = hasMapAction && mapActionHandler && (!searchBoxValue) ? (
         <AppAction
             cssClass={defaultAppActions.map.cssClass}
             title={defaultAppActions.map.title}
@@ -75,7 +81,7 @@ export default function AppActions({
             onClickHandler={mapActionHandler}
         />) : null;
 
-    const helpIconElement = hasHelpAction && helpActionHandler ? (
+    const helpIconElement = hasHelpAction && helpActionHandler && (!searchBoxValue) ? (
         <AppAction
             cssClass={defaultAppActions.help.cssClass}
             title={defaultAppActions.help.title}
@@ -93,7 +99,7 @@ export default function AppActions({
             handleSearchBoxChange={handleSearchBoxChange}
         />) : null;
 
-    const authenticatedActions = authenticated ? (
+    const authenticatedActions = authenticated && (!searchBoxValue) ? (
         <AuthenticatedActionsMenu
             authenticatedActionsOpen={authenticatedActionsOpen}
             openAuthenticatedActions={openAuthenticatedActions}

@@ -43,6 +43,8 @@ export default function AppActions({
     expandSearchBox,
     contractSearchBox,
     closeAllElements,
+    searchBoxValue,
+    handleSearchBoxChange,
 }) {
     const customActionElements = (() => {
         if (customActions) {
@@ -87,6 +89,8 @@ export default function AppActions({
             searchPlaceholder={searchPlaceholder}
             expandSearchBox={expandSearchBox}
             contractSearchBox={contractSearchBox}
+            searchBoxValue={searchBoxValue}
+            handleSearchBoxChange={handleSearchBoxChange}
         />) : null;
 
     const authenticatedActions = authenticated ? (
@@ -134,4 +138,6 @@ AppActions.propTypes = {
     expandSearchBox: func,
     contractSearchBox: func,
     closeAllElements: func,
+    searchBoxValue: string.isRequired,
+    handleSearchBoxChange: func.isRequired,
 };

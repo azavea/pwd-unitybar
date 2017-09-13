@@ -25,6 +25,7 @@ export default function AppSwitcher({
     }, i) => {
         const secondaryApp = secondAppName && secondAppDescription && secondAppUrl ? (
             <AppSummary
+                appSwitcherOpen={appSwitcherOpen}
                 name={secondAppName}
                 description={secondAppDescription}
                 url={secondAppUrl}
@@ -41,6 +42,7 @@ export default function AppSwitcher({
                     {appHeading}
                 </h3>
                 <AppSummary
+                    appSwitcherOpen={appSwitcherOpen}
                     name={appName}
                     description={appDescription}
                     url={appUrl}
@@ -52,6 +54,7 @@ export default function AppSwitcher({
     });
 
     const appSwitcherOpenCSSClass = appSwitcherOpen ? '-on' : '';
+    const tabIndex = appSwitcherOpen ? '0' : '-1';
 
     return (
         <div className={`app-switcher ${appSwitcherOpenCSSClass}`}>
@@ -89,7 +92,7 @@ export default function AppSwitcher({
                 <div className="more-resources">
                     <a
                         className="link"
-                        tabIndex="-1"
+                        tabIndex={tabIndex}
                         href=""
                     >
                         More PWD stormwater resources ➔

@@ -8,8 +8,11 @@ export default function AppSummary({
     name,
     description,
     url,
+    appSwitcherOpen,
 }) {
     const currentLinkCSSClass = current ? '-on' : '';
+
+    const tabIndex = appSwitcherOpen ? '0' : '-1';
 
     return (
         <div className="app-summary">
@@ -19,7 +22,7 @@ export default function AppSummary({
             >
                 <a
                     className={`link ${currentLinkCSSClass}`}
-                    tabIndex="-1"
+                    tabIndex={tabIndex}
                     href={url}
                 >
                     {name}
@@ -37,4 +40,5 @@ AppSummary.propTypes = {
     name: string.isRequired,
     description: string.isRequired,
     url: string.isRequired,
+    appSwitcherOpen: bool.isRequired,
 };

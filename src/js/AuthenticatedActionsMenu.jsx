@@ -14,25 +14,22 @@ export default function AuthenticatedActionsMenu({
     openAuthenticatedActions,
     closeAuthenticatedActions,
 }) {
+    const tabIndex = authenticatedActionsOpen ? '0' : '-1';
+
     const settingsMenuItem = (() => {
         if (!hasSettings) {
             return null;
         }
-        const settingsElement = settingsHandler ? (
+
+        const settingsElement = (
             <a
                 className="link"
-                tabIndex="-1"
-                onClick={settingsHandler}
+                tabIndex={tabIndex}
+                href={settingsHandler ? null : settingsUrl}
+                onClick={settingsHandler || null}
             >
                 Settings
-            </a>) : (
-                <a
-                    className="link"
-                    tabIndex="-1"
-                    href={settingsUrl}
-                >
-                    Settings
-                </a>);
+            </a>);
 
         return (
             <li
@@ -53,7 +50,7 @@ export default function AuthenticatedActionsMenu({
             >
                 <button
                     className="link"
-                    tabIndex="-1"
+                    tabIndex={tabIndex}
                     onClick={onClickHandler}
                 >
                     {name}
@@ -90,7 +87,7 @@ export default function AuthenticatedActionsMenu({
                 >
                     <a
                         className="link"
-                        tabIndex="-1"
+                        tabIndex={tabIndex}
                         href=""
                     >
                         Sign out

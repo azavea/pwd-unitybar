@@ -20,21 +20,16 @@ export default function AuthenticatedActionsMenu({
         if (!hasSettings) {
             return null;
         }
-        const settingsElement = settingsHandler ? (
+
+        const settingsElement = (
             <a
                 className="link"
                 tabIndex={tabIndex}
-                onClick={settingsHandler}
+                href={settingsHandler ? null : settingsUrl}
+                onClick={settingsHandler || null}
             >
                 Settings
-            </a>) : (
-                <a
-                    className="link"
-                    tabIndex={tabIndex}
-                    href={settingsUrl}
-                >
-                    Settings
-                </a>);
+            </a>);
 
         return (
             <li

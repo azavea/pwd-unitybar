@@ -24,6 +24,7 @@ class UnityBar extends Component {
             appSwitcherOpen: false,
             authenticatedActionsOpen: false,
             searchBoxExpanded: false,
+            searchBoxValue: '',
         };
         this.openAppSwitcher = this.openAppSwitcher.bind(this);
         this.closeAppSwitcher = this.closeAppSwitcher.bind(this);
@@ -32,10 +33,15 @@ class UnityBar extends Component {
         this.contractSearchBox = this.contractSearchBox.bind(this);
         this.expandSearchBox = this.expandSearchBox.bind(this);
         this.closeAllElements = this.closeAllElements.bind(this);
+        this.handleSearchBoxChange = this.handleSearchBoxChange.bind(this);
     }
 
     handleClickOutside() {
         this.closeAllElements();
+    }
+
+    handleSearchBoxChange({ target: { value: searchBoxValue } }) {
+        this.setState({ searchBoxValue });
     }
 
     closeAllElements() {
@@ -79,7 +85,9 @@ class UnityBar extends Component {
     }
 
     contractSearchBox() {
-        this.setState({ searchBoxExpanded: false });
+        if (!this.state.searchBoxValue) {
+            this.setState({ searchBoxExpanded: false });
+        }
     }
 
     render() {
@@ -106,6 +114,7 @@ class UnityBar extends Component {
             appSwitcherOpen,
             authenticatedActionsOpen,
             searchBoxExpanded,
+            searchBoxValue,
         } = this.state;
 
         const pwdLogo = hasLogo ? <PWDLogo /> : null;
@@ -177,6 +186,8 @@ class UnityBar extends Component {
                     expandSearchBox={this.expandSearchBox}
                     contractSearchBox={this.contractSearchBox}
                     closeAllElements={this.closeAllElements}
+                    searchBoxValue={searchBoxValue}
+                    handleSearchBoxChange={this.handleSearchBoxChange}
                 />
                 <SVGIcons />
             </header>

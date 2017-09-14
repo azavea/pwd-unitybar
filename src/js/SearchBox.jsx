@@ -7,7 +7,11 @@ export default function SearchBox({
     searchPlaceholder,
     expandSearchBox,
     contractSearchBox,
+    searchBoxValue,
+    handleSearchBoxChange,
 }) {
+    const tabIndex = searchBoxValue ? '0' : '-1';
+
     return (
         <div
             className="search-form"
@@ -23,17 +27,19 @@ export default function SearchBox({
                 className="field"
                 type="search"
                 name="query"
-                value=""
+                value={searchBoxValue}
                 role={searchBoxRole}
                 aria-label="Search text"
                 placeholder={`${searchPlaceholder}`}
                 onFocus={expandSearchBox}
                 onBlur={contractSearchBox}
+                onChange={handleSearchBoxChange}
             />
             <button
                 className="action"
                 type="button"
                 name="search-btn"
+                tabIndex={tabIndex}
             >
                 Search
             </button>
@@ -45,4 +51,6 @@ SearchBox.propTypes = {
     searchPlaceholder: string.isRequired,
     expandSearchBox: func.isRequired,
     contractSearchBox: func.isRequired,
+    searchBoxValue: string.isRequired,
+    handleSearchBoxChange: func.isRequired,
 };

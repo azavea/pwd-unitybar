@@ -3,9 +3,8 @@
     flex-flow: row wrap;
     align-items: flex-start;
     justify-content: flex-start;
-    border-right: 2px solid $pwdub-active;
-    border-bottom: 2px solid $pwdub-active;
     background-color: $pwdub-white;
+    box-shadow: 10px 10px 20px rgba($pwdub-black, 0.2);
 
     @include tablet {
         flex-flow: column nowrap;

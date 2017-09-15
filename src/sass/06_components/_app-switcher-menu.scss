@@ -41,6 +41,11 @@
             @include responsive(800px) {
                 font-size: 16px;
             }
+            
+            @include mobile {
+                margin-left: $pwdub-app-switcher-gutter-mobile;
+                font-size: 14px;
+            }
         }
     }
 

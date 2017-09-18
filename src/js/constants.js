@@ -38,7 +38,7 @@ export const pwdAppConfig = [
         appCSSClass: '-retrofit-developers',
         appHeading: 'For stormwater infrastructure developers',
         appName: 'Stormwater Retrofit Map',
-        appDescription: `Find commercial, industrial, and multifamily,
+        appDescription: `Find commercial, industrial, and multifamily
             properties interested in a stormwater retrofit.`,
         appUrl: 'http://developer.epa-star.azavea.com/',
     },
@@ -50,8 +50,8 @@ export const pwdAppConfig = [
             management infrastructure into your property.`,
         appUrl: 'http://d2bccmsq9bkrud.cloudfront.net/',
         secondAppName: 'Stormwater Retrofit Campaign',
-        secondAppDescription: `Learn how a grant from PWD can pay for your
-            stormwater retrofit.`,
+        secondAppDescription: `Learn how a grant from the Philadelphia Water
+            Department can pay for your stormwater retrofit.`,
         secondAppUrl: 'http://marketing.epa-star.azavea.com/',
     },
 ];

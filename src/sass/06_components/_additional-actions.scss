@@ -37,6 +37,7 @@
         background-color: $pwdub-active;
         list-style: none;
         text-align: right;
+        box-shadow: -10px 10px 20px rgba($pwdub-black, 0.2);
 
         @include mobile {
             width: 100vw;

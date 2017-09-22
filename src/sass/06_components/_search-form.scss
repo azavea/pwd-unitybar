@@ -18,12 +18,16 @@
         height: 18px;
         z-index: 2;
         pointer-events: none;
-        fill: $pwdub-blue;
 
         @include mobile {
             left: 4px;
             cursor: pointer;
         }
+    }
+
+    > .icon,
+    > .icon > use > svg {
+        fill: $pwdub-blue;
     }
 
     > .field {
@@ -70,6 +74,12 @@
         @include mobile {
             right: 16px;
             left: auto;
+        }
+    }
+
+    > .icon,
+    > .icon > use > svg {
+        @include mobile {
             fill: $pwdub-white;
         }
     }

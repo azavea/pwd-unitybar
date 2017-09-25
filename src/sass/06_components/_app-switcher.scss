@@ -70,7 +70,8 @@
     > .toggle {
         background-color: $pwdub-active;
 
-        > .icon {
+        > .icon,
+        > .icon > use > svg {
             fill: $pwdub-white;
         }
 
@@ -81,6 +82,10 @@
 
             > .icon.-back {
                 @include restore;
+            }
+
+            > .icon.-back,
+            > .icon > use > svg {
                 fill: $pwdub-white;
             }
         }

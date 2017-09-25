@@ -73,7 +73,8 @@
     > .toggle {
         background-color: $pwdub-active;
 
-        > .icon {
+        > .icon,
+        > .icon > use > svg {
             fill: $pwdub-white;
         }
     }

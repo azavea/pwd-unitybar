@@ -15,7 +15,8 @@
     }
 
     .search-form {
-        > .icon {
+        > .icon,
+        > .icon > use > svg {
             @include mobile {
                 fill: $pwdub-blue;
             }
@@ -45,7 +46,8 @@
     }
 
     .search-form {
-        > .icon {
+        > .icon,
+        > .icon > use > svg {
             fill: $pwdub-blue;
 
             @include mobile {
@@ -80,7 +82,8 @@
     }
 
     .search-form {
-        > .icon {
+        > .icon,
+        > .icon > use > svg {
             fill: $pwdub-purple;
 
             @include mobile {

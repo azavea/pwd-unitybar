@@ -107,6 +107,7 @@ class UnityBar extends Component {
             hasSettings,
             settingsUrl,
             settingsHandler,
+            signOutHandler,
             customMenuOptions,
         } = this.props;
 
@@ -157,6 +158,13 @@ class UnityBar extends Component {
             }
         };
 
+        const wrappedSignOutHandler = () => {
+            if (signOutHandler) {
+                this.closeAllElements();
+                signOutHandler();
+            }
+        };
+
         return (
             <header className={`pwd-unity-bar ${unityBarTheme}`}>
                 <AppSwitcher
@@ -181,6 +189,7 @@ class UnityBar extends Component {
                     hasSettings={hasSettings}
                     settingsUrl={settingsUrl}
                     settingsHandler={wrappedSettingsHandler}
+                    signOutHandler={wrappedSignOutHandler}
                     customMenuOptions={customMenuOptions}
                     searchBoxExpanded={searchBoxExpanded}
                     expandSearchBox={this.expandSearchBox}
@@ -211,6 +220,7 @@ UnityBar.propTypes = {
     hasSettings: bool,
     settingsUrl: string,
     settingsHandler: func,
+    signOutHandler: func,
     customMenuOptions: arrayOf(customMenuOptionPropType),
 };
 
@@ -224,6 +234,9 @@ UnityBar.defaultProps = {
     hasHelpAction: true,
     authenticated: false,
     hasSettings: false,
+    signOutHandler() {
+        window.console.log('You signed out!');
+    },
 };
 
 export default onClickOutside(UnityBar);

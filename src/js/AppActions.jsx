@@ -38,6 +38,7 @@ export default function AppActions({
     hasSettings,
     settingsUrl,
     settingsHandler,
+    signOutHandler,
     customMenuOptions,
     searchBoxExpanded,
     expandSearchBox,
@@ -106,6 +107,7 @@ export default function AppActions({
             closeAuthenticatedActions={closeAuthenticatedActions}
             hasSettings={hasSettings}
             settingsHandler={settingsHandler}
+            signOutHandler={signOutHandler}
             settingsUrl={settingsUrl}
             customMenuOptions={customMenuOptions}
             closeAllElements={closeAllElements}
@@ -139,6 +141,7 @@ AppActions.propTypes = {
     hasSettings: bool,
     settingsUrl: string,
     settingsHandler: func,
+    signOutHandler: func,
     customMenuOptions: arrayOf(customMenuOptionPropType),
     searchBoxExpanded: bool,
     expandSearchBox: func,

@@ -65,6 +65,7 @@
 
         > .listitem > .link {
             @include delinkify($pwdub-white);
+            cursor: pointer;
         }
     }
 }

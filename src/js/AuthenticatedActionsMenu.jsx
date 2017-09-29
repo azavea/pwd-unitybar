@@ -9,6 +9,7 @@ export default function AuthenticatedActionsMenu({
     hasSettings,
     settingsUrl,
     settingsHandler,
+    signOutHandler,
     customMenuOptions,
     authenticatedActionsOpen,
     openAuthenticatedActions,
@@ -88,7 +89,7 @@ export default function AuthenticatedActionsMenu({
                     <a
                         className="link"
                         tabIndex={tabIndex}
-                        href=""
+                        onClick={signOutHandler || null}
                     >
                         Sign out
                     </a>
@@ -101,6 +102,7 @@ export default function AuthenticatedActionsMenu({
 AuthenticatedActionsMenu.propTypes = {
     hasSettings: bool,
     settingsHandler: func,
+    signOutHandler: func,
     settingsUrl: string,
     customMenuOptions: arrayOf(customMenuOptionPropType),
     authenticatedActionsOpen: bool.isRequired,

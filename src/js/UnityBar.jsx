@@ -34,6 +34,12 @@ class UnityBar extends Component {
         this.expandSearchBox = this.expandSearchBox.bind(this);
         this.closeAllElements = this.closeAllElements.bind(this);
         this.handleSearchBoxChange = this.handleSearchBoxChange.bind(this);
+        this.clearSearchBoxValue = this.clearSearchBoxValue.bind(this);
+    }
+
+    clearSearchBoxValue() {
+        this.setState({ searchBoxValue: '' },
+            () => this.props.searchChangeHandler(this.state.searchBoxValue));
     }
 
     handleClickOutside() {
@@ -41,7 +47,8 @@ class UnityBar extends Component {
     }
 
     handleSearchBoxChange({ target: { value: searchBoxValue } }) {
-        this.setState({ searchBoxValue });
+        this.setState({ searchBoxValue },
+            () => this.props.searchChangeHandler(this.state.searchBoxValue));
     }
 
     closeAllElements() {
@@ -98,6 +105,7 @@ class UnityBar extends Component {
             hasLogo,
             hasSearch,
             searchPlaceholder,
+            searchSelectHandler,
             hasMapAction,
             mapActionHandler,
             hasHelpAction,
@@ -165,6 +173,12 @@ class UnityBar extends Component {
             }
         };
 
+        const wrappedSearchSelectHandler = () => {
+            if (searchSelectHandler) {
+                searchSelectHandler(searchBoxValue);
+            }
+        };
+
         return (
             <header className={`pwd-unity-bar ${unityBarTheme}`}>
                 <AppSwitcher
@@ -181,6 +195,7 @@ class UnityBar extends Component {
                     closeAuthenticatedActions={this.closeAuthenticatedActions}
                     hasSearch={hasSearch}
                     searchPlaceholder={searchPlaceholder}
+                    searchSelectHandler={wrappedSearchSelectHandler}
                     hasMapAction={hasMapAction}
                     mapActionHandler={wrappedMapActionHandler}
                     hasHelpAction={hasHelpAction}
@@ -211,6 +226,8 @@ UnityBar.propTypes = {
     hasLogo: bool,
     hasSearch: bool,
     searchPlaceholder: string,
+    searchChangeHandler: func,
+    searchSelectHandler: func,
     hasMapAction: bool,
     mapActionHandler: func,
     hasHelpAction: bool,
@@ -230,6 +247,12 @@ UnityBar.defaultProps = {
     hasLogo: true,
     hasSearch: true,
     searchPlaceholder: 'Search',
+    searchChangeHandler(text) {
+        window.console.log('changed text -> ', text);
+    },
+    searchSelectHandler(selection) {
+        window.console.log('made selection -> ', selection);
+    },
     hasMapAction: true,
     hasHelpAction: true,
     authenticated: false,

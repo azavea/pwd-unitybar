@@ -30,6 +30,7 @@ export default function AppActions({
     closeAuthenticatedActions,
     hasSearch,
     searchPlaceholder,
+    searchSelectHandler,
     hasMapAction,
     mapActionHandler,
     hasHelpAction,
@@ -94,6 +95,7 @@ export default function AppActions({
     const searchBox = hasSearch ? (
         <SearchBox
             searchPlaceholder={searchPlaceholder}
+            searchSelectHandler={searchSelectHandler}
             expandSearchBox={expandSearchBox}
             contractSearchBox={contractSearchBox}
             searchBoxValue={searchBoxValue}
@@ -133,6 +135,7 @@ AppActions.propTypes = {
     closeAuthenticatedActions: func,
     hasSearch: bool,
     searchPlaceholder: string,
+    searchSelectHandler: func.isRequired,
     hasMapAction: bool,
     mapActionHandler: func,
     hasHelpAction: bool,

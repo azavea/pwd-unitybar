@@ -9,6 +9,10 @@ import {
     UnityBarAccess,
     UnityBarThemes,
     isDevelopment,
+    pwdAppConfig,
+    PARCEL_VIEWER,
+    RETROFIT_MAP,
+    CREDITS_EXPLORER,
 } from './constants';
 
 import '../sass/pwd-unity-bar.scss';
@@ -116,6 +120,10 @@ class UnityBar extends Component {
             settingsHandler,
             signOutHandler,
             customMenuOptions,
+            parcelViewerUrl,
+            creditsExplorerUrl,
+            retrofitMapUrl,
+            retrofitCampaignUrl,
         } = this.props;
 
         const {
@@ -123,6 +131,26 @@ class UnityBar extends Component {
             authenticatedActionsOpen,
             searchBoxExpanded,
         } = this.state;
+
+        const appConfig = pwdAppConfig.map((config) => {
+            switch (config.appName) {
+                case PARCEL_VIEWER:
+                    return Object.assign({}, config, {
+                        appUrl: parcelViewerUrl,
+                    });
+                case RETROFIT_MAP:
+                    return Object.assign({}, config, {
+                        appUrl: retrofitMapUrl,
+                    });
+                case CREDITS_EXPLORER:
+                    return Object.assign({}, config, {
+                        appUrl: creditsExplorerUrl,
+                        secondAppUrl: retrofitCampaignUrl,
+                    });
+                default:
+                    return config;
+            }
+        });
 
         const pwdLogo = hasLogo ? <PWDLogo /> : null;
 
@@ -184,6 +212,7 @@ class UnityBar extends Component {
                     openAppSwitcher={this.openAppSwitcher}
                     closeAppSwitcher={this.closeAppSwitcher}
                     currentAppName={currentAppName}
+                    appConfig={appConfig}
                 />
                 {pwdLogo}
                 <AppActions
@@ -238,6 +267,10 @@ UnityBar.propTypes = {
     settingsHandler: func,
     signOutHandler: func,
     customMenuOptions: arrayOf(customMenuOptionPropType),
+    parcelViewerUrl: string,
+    creditsExplorerUrl: string,
+    retrofitMapUrl: string,
+    retrofitCampaignUrl: string,
 };
 
 UnityBar.defaultProps = {
@@ -266,6 +299,10 @@ UnityBar.defaultProps = {
             window.console.log('You signed out!');
         }
     },
+    parcelViewerUrl: '',
+    creditsExplorerUrl: '',
+    retrofitMapUrl: '',
+    retrofitCampaignUrl: '',
 };
 
 export default onClickOutside(UnityBar);

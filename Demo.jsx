@@ -52,6 +52,10 @@ class Demo extends Component {
                     searchChangeHandler={this.handleSearchChange}
                     searchSubmitHandler={this.handleSearchSubmit}
                     searchBoxValue={searchValue}
+                    parcelViewerUrl="http://www.phila.gov/water/swmap/"
+                    creditsExplorerUrl="http://water.phila.gov/swexp/"
+                    retrofitMapUrl="https://www.azavea.com"
+                    retrofitCampaignUrl="https://www.azavea.com"
                 />
                 <div id="output-region">
                     <div>

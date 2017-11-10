@@ -28,33 +28,38 @@ export const customMenuOptionPropType = shape({
     onClickHandler: func.isRequired,
 });
 
+export const PARCEL_VIEWER = 'Parcel Viewer';
+export const RETROFIT_MAP = 'Stormwater Retrofit Map';
+export const CREDITS_EXPLORER = 'Stormwater Credits Explorer';
+export const RETROFIT_CAMPAIGN = 'Stormwater Retrofit Campaign';
+
 export const pwdAppConfig = [
     {
         appCSSClass: '-all-properties',
         appHeading: 'For all properties',
-        appName: 'Parcel Viewer',
+        appName: PARCEL_VIEWER,
         appDescription: `Information about your property, water account,
             and stormwater billing charges.`,
-        appUrl: 'http://d11ialel8p79id.cloudfront.net/',
+        appUrl: '',
     },
     {
         appCSSClass: '-retrofit-developers',
         appHeading: 'For stormwater infrastructure developers',
-        appName: 'Stormwater Retrofit Map',
+        appName: RETROFIT_MAP,
         appDescription: `Find commercial, industrial, and multifamily
             properties interested in a stormwater retrofit.`,
-        appUrl: 'http://developer.epa-star.azavea.com/',
+        appUrl: '',
     },
     {
         appCSSClass: '-retrofit-properties',
         appHeading: 'For commercial, industrial, and multifamily properties',
-        appName: 'Stormwater Credits Explorer',
+        appName: CREDITS_EXPLORER,
         appDescription: `See how much you can save by retrofitting stormwater
             management infrastructure into your property.`,
-        appUrl: 'http://d2bccmsq9bkrud.cloudfront.net/',
-        secondAppName: 'Stormwater Retrofit Campaign',
+        appUrl: '',
+        secondAppName: RETROFIT_CAMPAIGN,
         secondAppDescription: `Learn how a grant from the Philadelphia Water
             Department can pay for your stormwater retrofit.`,
-        secondAppUrl: 'http://marketing.epa-star.azavea.com/',
+        secondAppUrl: '',
     },
 ];

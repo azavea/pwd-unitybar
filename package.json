@@ -19,9 +19,9 @@
   },
   "homepage": "https://github.com/azavea/pwd-unitybar#readme",
   "dependencies": {
-    "prop-types": "15.5.10",
-    "react": "15.6.1",
-    "react-dom": "15.6.1",
+    "prop-types": "15.6.0",
+    "react": "16.1.0",
+    "react-dom": "16.1.0",
     "react-onclickoutside": "6.5.0"
   },
   "devDependencies": {

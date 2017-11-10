@@ -12,8 +12,16 @@ class Demo extends Component {
             selectedValue: '',
         };
 
+        this.clearSearchBoxValue = this.clearSearchBoxValue.bind(this);
         this.handleSearchChange = this.handleSearchChange.bind(this);
         this.handleSearchSelect = this.handleSearchSelect.bind(this);
+    }
+
+    clearSearchBoxValue() {
+        this.setState({
+            searchValue: '',
+            selectedValue: '',
+        });
     }
 
     handleSearchChange(searchValue) {
@@ -43,6 +51,7 @@ class Demo extends Component {
                     settingsHandler={() => { window.console.log('settings action clicked'); }}
                     searchChangeHandler={this.handleSearchChange}
                     searchSelectHandler={this.handleSearchSelect}
+                    searchBoxValue={searchValue}
                 />
                 <div id="output-region">
                     <div>
@@ -55,7 +64,7 @@ class Demo extends Component {
                             Search selection: {selectedValue}
                         </p>
                     </div>
-                    <button>
+                    <button onClick={this.clearSearchBoxValue}>
                         Clear search box
                     </button>
                 </div>

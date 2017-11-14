@@ -8,6 +8,7 @@ import {
     customMenuOptionPropType,
     UnityBarAccess,
     UnityBarThemes,
+    isDevelopment,
 } from './constants';
 
 import '../sass/pwd-unity-bar.scss';
@@ -102,7 +103,7 @@ class UnityBar extends Component {
             hasLogo,
             hasSearch,
             searchPlaceholder,
-            searchSelectHandler,
+            searchSubmitHandler,
             searchBoxValue,
             hasMapAction,
             mapActionHandler,
@@ -170,9 +171,9 @@ class UnityBar extends Component {
             }
         };
 
-        const wrappedSearchSelectHandler = () => {
-            if (searchSelectHandler) {
-                searchSelectHandler(searchBoxValue);
+        const wrappedSearchSubmitHandler = () => {
+            if (searchSubmitHandler) {
+                searchSubmitHandler(searchBoxValue);
             }
         };
 
@@ -192,7 +193,7 @@ class UnityBar extends Component {
                     closeAuthenticatedActions={this.closeAuthenticatedActions}
                     hasSearch={hasSearch}
                     searchPlaceholder={searchPlaceholder}
-                    searchSelectHandler={wrappedSearchSelectHandler}
+                    searchSubmitHandler={wrappedSearchSubmitHandler}
                     hasMapAction={hasMapAction}
                     mapActionHandler={wrappedMapActionHandler}
                     hasHelpAction={hasHelpAction}
@@ -224,7 +225,7 @@ UnityBar.propTypes = {
     hasSearch: bool,
     searchPlaceholder: string,
     searchChangeHandler: func,
-    searchSelectHandler: func,
+    searchSubmitHandler: func,
     searchBoxValue: string,
     hasMapAction: bool,
     mapActionHandler: func,
@@ -246,10 +247,14 @@ UnityBar.defaultProps = {
     hasSearch: true,
     searchPlaceholder: 'Search',
     searchChangeHandler(text) {
-        window.console.log('changed text -> ', text);
+        if (isDevelopment) {
+            window.console.log('changed text ->', text);
+        }
     },
-    searchSelectHandler(selection) {
-        window.console.log('made selection -> ', selection);
+    searchSubmitHandler(submission) {
+        if (isDevelopment) {
+            window.console.log('submitted ->', submission);
+        }
     },
     searchBoxValue: '',
     hasMapAction: true,
@@ -257,7 +262,9 @@ UnityBar.defaultProps = {
     authenticated: false,
     hasSettings: false,
     signOutHandler() {
-        window.console.log('You signed out!');
+        if (isDevelopment) {
+            window.console.log('You signed out!');
+        }
     },
 };
 

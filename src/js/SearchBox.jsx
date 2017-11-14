@@ -5,7 +5,7 @@ const searchBoxRole = 'searchbox';
 
 export default function SearchBox({
     searchPlaceholder,
-    searchSelectHandler,
+    searchSubmitHandler,
     expandSearchBox,
     contractSearchBox,
     searchBoxValue,
@@ -15,7 +15,7 @@ export default function SearchBox({
 
     const checkReturnKeyPress = ({ keyCode }) => {
         if (keyCode === 13) {
-            searchSelectHandler();
+            searchSubmitHandler();
         }
     };
 
@@ -44,7 +44,7 @@ export default function SearchBox({
                 onKeyDown={checkReturnKeyPress}
             />
             <button
-                onClick={searchSelectHandler}
+                onClick={searchSubmitHandler}
                 className="action"
                 type="button"
                 name="search-btn"
@@ -58,7 +58,7 @@ export default function SearchBox({
 
 SearchBox.propTypes = {
     searchPlaceholder: string.isRequired,
-    searchSelectHandler: func.isRequired,
+    searchSubmitHandler: func.isRequired,
     expandSearchBox: func.isRequired,
     contractSearchBox: func.isRequired,
     searchBoxValue: string.isRequired,

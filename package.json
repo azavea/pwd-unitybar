@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "private": true,
   "description": "Unified header bar for PWD Stormwater web apps",
-  "main": "index.js",
+  "main": "src/js/UnityBar.jsx",
   "scripts": {
     "start": "node_modules/.bin/webpack-dev-server --config webpack.dev.config.js --progress --colors --host 0.0.0.0 --port 7777",
     "test": "echo \"Error: no test specified\" && exit 1",

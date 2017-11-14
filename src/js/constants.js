@@ -1,5 +1,8 @@
 import { func, oneOf, shape, string } from 'prop-types';
 
+export const isDevelopment = process && process.env &&
+    process.env.NODE_ENV === 'development';
+
 export const UnityBarAccess = {
     Public: 'public',
     Internal: 'internal',

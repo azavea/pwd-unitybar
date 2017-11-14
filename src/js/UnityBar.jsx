@@ -8,6 +8,7 @@ import {
     customMenuOptionPropType,
     UnityBarAccess,
     UnityBarThemes,
+    isDevelopment,
 } from './constants';
 
 import '../sass/pwd-unity-bar.scss';
@@ -24,7 +25,6 @@ class UnityBar extends Component {
             appSwitcherOpen: false,
             authenticatedActionsOpen: false,
             searchBoxExpanded: false,
-            searchBoxValue: '',
         };
         this.openAppSwitcher = this.openAppSwitcher.bind(this);
         this.closeAppSwitcher = this.closeAppSwitcher.bind(this);
@@ -34,14 +34,19 @@ class UnityBar extends Component {
         this.expandSearchBox = this.expandSearchBox.bind(this);
         this.closeAllElements = this.closeAllElements.bind(this);
         this.handleSearchBoxChange = this.handleSearchBoxChange.bind(this);
+        this.clearSearchBoxValue = this.clearSearchBoxValue.bind(this);
+    }
+
+    clearSearchBoxValue() {
+        this.props.searchChangeHandler('');
     }
 
     handleClickOutside() {
         this.closeAllElements();
     }
 
-    handleSearchBoxChange({ target: { value: searchBoxValue } }) {
-        this.setState({ searchBoxValue });
+    handleSearchBoxChange({ target: { value } }) {
+        this.props.searchChangeHandler(value);
     }
 
     closeAllElements() {
@@ -85,7 +90,7 @@ class UnityBar extends Component {
     }
 
     contractSearchBox() {
-        if (!this.state.searchBoxValue) {
+        if (!this.props.searchBoxValue) {
             this.setState({ searchBoxExpanded: false });
         }
     }
@@ -98,6 +103,8 @@ class UnityBar extends Component {
             hasLogo,
             hasSearch,
             searchPlaceholder,
+            searchSubmitHandler,
+            searchBoxValue,
             hasMapAction,
             mapActionHandler,
             hasHelpAction,
@@ -115,7 +122,6 @@ class UnityBar extends Component {
             appSwitcherOpen,
             authenticatedActionsOpen,
             searchBoxExpanded,
-            searchBoxValue,
         } = this.state;
 
         const pwdLogo = hasLogo ? <PWDLogo /> : null;
@@ -165,6 +171,12 @@ class UnityBar extends Component {
             }
         };
 
+        const wrappedSearchSubmitHandler = () => {
+            if (searchSubmitHandler) {
+                searchSubmitHandler(searchBoxValue);
+            }
+        };
+
         return (
             <header className={`pwd-unity-bar ${unityBarTheme}`}>
                 <AppSwitcher
@@ -181,6 +193,7 @@ class UnityBar extends Component {
                     closeAuthenticatedActions={this.closeAuthenticatedActions}
                     hasSearch={hasSearch}
                     searchPlaceholder={searchPlaceholder}
+                    searchSubmitHandler={wrappedSearchSubmitHandler}
                     hasMapAction={hasMapAction}
                     mapActionHandler={wrappedMapActionHandler}
                     hasHelpAction={hasHelpAction}
@@ -211,6 +224,9 @@ UnityBar.propTypes = {
     hasLogo: bool,
     hasSearch: bool,
     searchPlaceholder: string,
+    searchChangeHandler: func,
+    searchSubmitHandler: func,
+    searchBoxValue: string,
     hasMapAction: bool,
     mapActionHandler: func,
     hasHelpAction: bool,
@@ -230,12 +246,25 @@ UnityBar.defaultProps = {
     hasLogo: true,
     hasSearch: true,
     searchPlaceholder: 'Search',
+    searchChangeHandler(text) {
+        if (isDevelopment) {
+            window.console.log('changed text ->', text);
+        }
+    },
+    searchSubmitHandler(submission) {
+        if (isDevelopment) {
+            window.console.log('submitted ->', submission);
+        }
+    },
+    searchBoxValue: '',
     hasMapAction: true,
     hasHelpAction: true,
     authenticated: false,
     hasSettings: false,
     signOutHandler() {
-        window.console.log('You signed out!');
+        if (isDevelopment) {
+            window.console.log('You signed out!');
+        }
     },
 };
 

@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "private": true,
   "description": "Unified header bar for PWD Stormwater web apps",
-  "main": "index.js",
+  "main": "src/js/UnityBar.jsx",
   "scripts": {
     "start": "node_modules/.bin/webpack-dev-server --config webpack.dev.config.js --progress --colors --host 0.0.0.0 --port 7777",
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -14,14 +14,15 @@
     "url": "git+https://github.com/azavea/pwd-unitybar.git"
   },
   "author": "Azavea",
+  "license": "Apache-2",
   "bugs": {
     "url": "https://github.com/azavea/pwd-unitybar/issues"
   },
   "homepage": "https://github.com/azavea/pwd-unitybar#readme",
   "dependencies": {
-    "prop-types": "15.5.10",
-    "react": "15.6.1",
-    "react-dom": "15.6.1",
+    "prop-types": "15.6.0",
+    "react": "16.1.0",
+    "react-dom": "16.1.0",
     "react-onclickoutside": "6.5.0"
   },
   "devDependencies": {

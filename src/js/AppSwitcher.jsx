@@ -1,9 +1,5 @@
 import React from 'react';
-import { bool, func, string } from 'prop-types';
-
-import {
-    pwdAppConfig,
-} from './constants';
+import { arrayOf, bool, func, shape, string } from 'prop-types';
 
 import AppSummary from './AppSummary';
 
@@ -12,8 +8,9 @@ export default function AppSwitcher({
     appSwitcherOpen,
     openAppSwitcher,
     closeAppSwitcher,
+    appConfig,
 }) {
-    const pwdAppLinks = pwdAppConfig.map(({
+    const pwdAppLinks = appConfig.map(({
         appCSSClass,
         appHeading,
         appName,
@@ -108,4 +105,13 @@ AppSwitcher.propTypes = {
     appSwitcherOpen: bool.isRequired,
     openAppSwitcher: func.isRequired,
     closeAppSwitcher: func.isRequired,
+    appConfig: arrayOf(shape({
+        appCSSClass: string,
+        appHeading: string,
+        appName: string,
+        appUrl: string,
+        secondAppName: string,
+        secondAppDescription: string,
+        secondAppUrl: string,
+    })),
 };

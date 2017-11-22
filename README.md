@@ -98,3 +98,33 @@ Once you've pushed the tags, the new release will appear in the project's
 ["Releases" tab in GitHub](https://github.com/azavea/pwd-unitybar/releases).
 There you can edit the tagged release to add release notes.
 
+### API
+
+The UnityBar's main interface is a React component configurable by supplying the
+following props:
+
+| name | type | description | default |
+| --- | --- | --- | --- |
+| currentAppName | string | The name of the current app | `null` (required) |
+| theme | string | UnityBar theme (`"blue"`, `"white"`, or `"custom"`) | `"blue"` |
+| access | string | Access level (`"public"` or `"internal"`) | `"public"` |
+| hasLogo | bool | Display the PWD logo | `true` |
+| hasSearch | bool | Display the search bar | `true` |
+| searchPlaceholder | string | Search bar placeholder text | `"Search"` |
+| searchChangeHandler | function | Function to handle changes to the search bar input | `console.log` |
+| searchSubmitHandler | function | Function to handle search bar input submission | `console.log` |
+| searchBoxValue | string | Current [controlled input](https://reactjs.org/docs/forms.html#controlled-components) value | `""` |
+| hasMapAction | bool | Display the map action button | `true` |
+| hasHelpAction | bool | Display the help action button | `true` |
+| helpActionHandler | function | Function to handle clicks on the help action button | `null` |
+| customActions | array | An array of [custom actions](https://github.com/azavea/pwd-unitybar/blob/develop/src/js/constants.js#L19) | `null` |
+| authenticated | bool | Display the authenticated actions menu | `false` |
+| hasSettings | bool | Display the settings action | `false` |
+| settingsUrl | string | Link to settings page | `null` |
+| settingsHandler | function | Function to handle clicking the settings action | `null` |
+| signOutHandler | function | Function to handle clicking sign out | `console.log` |
+| customMenuOptions | array | An array of [custom menu options](https://github.com/azavea/pwd-unitybar/blob/develop/src/js/constants.js#L26) | `null` |
+| parcelViewerUrl | string | Link to the Stormwater Parcel Viewer website | `""` |
+| creditsExplorerUrl | string | Link to the Stormwater Credits Explorer website | `""` |
+| retrofitMapUrl | string | Link to the Stormwater Retrofit Map website. | `""` |
+| retrofitCampaignUrl | string | Link to the Stormwater Retrofit Campaign website. | `""` |

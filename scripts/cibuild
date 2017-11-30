@@ -13,6 +13,7 @@ function cibuild() {
     ./scripts/lint
     ./scripts/test
     ./scripts/test --git
+    npm run bundle
 }
 
 if [ "${BASH_SOURCE[0]}" = "${0}" ]; then

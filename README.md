@@ -73,13 +73,15 @@ that `develop` builds successfully on Travis before commencing a release.
 
 After you've enabled `git flow`, you can use the following commands to make a
 release, replacing "1.2.3" with the version you're releasing and updating the
-`CHANGELOG.md` and `package.json` files to match that version. You should also
-update the distribution bundle files: `pwd.unitybar.js` & `pwd.unitybar.min.js`.
+`CHANGELOG.md`, `package.json`, and `package-lock.json` files to match that
+version. You should also update the distribution bundle files:
+`pwd.unitybar.js` & `pwd.unitybar.min.js`.
 
 ```sh
 git flow release start 1.2.3
 vim CHANGELOG.md
 vim package.json
+vim package-lock.json
 ./scripts/cibuild
 git add CHANGELOG.md package.json dist/pwd.unitybar.js dist/pwd.unitybar.min.js
 git commit -m "1.2.3"

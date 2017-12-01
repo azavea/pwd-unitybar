@@ -1,2 +1,19 @@
+# MacOS
+.DS_Store
+
+# SASS
 .sass-cache/
-*.css.map
+
+# NPM
+node_modules/
+
+# Output
+css/
+
+# Logs
+*.log
+
+# Temp
+tmp
+
+index.html

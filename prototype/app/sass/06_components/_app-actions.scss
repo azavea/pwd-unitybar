@@ -1,0 +1,81 @@
+.pwd-unity-bar .app-actions {
+    display: flex;
+    position: relative;
+    flex-flow: row nowrap;
+    align-items: stretch;
+    justify-content: flex-end;
+
+    > .search-form {
+        flex: 0 1 160px;
+        margin: auto 8px auto 32px;
+
+        @include mobile {
+            margin: 0;
+            flex-basis: $pwdub-app-switcher-gutter-mobile;
+        }
+    }
+
+    > .link {
+        @include delinkify;
+        display: flex;
+        flex: none;
+        flex-flow: row nowrap;
+        align-items: center;
+        justify-content: center;
+        width: $pwdub-app-switcher-gutter;
+
+        &:hover {
+            background-color: $pwdub-action-hover-background-color;
+        }
+
+        &.-map > .icon {
+            width: 24px;
+            height: 18px;
+        }
+
+        &.-help > .icon{
+            width: 24px;
+            height: 18px;
+        }
+
+        @include mobile {
+            width: $pwdub-app-switcher-gutter-mobile;
+        }
+    }
+
+    > .additional-actions {
+        flex: none;
+    }
+}
+
+.pwd-unity-bar .app-actions.-search {
+    z-index: 20;
+
+    > .link,
+    > .additional-actions {
+        @include invisible;
+    }
+
+    > .search-form {
+        position: absolute;
+        top: calc(50% - 19px);
+        right: 0;
+        left: 0;
+        flex-basis: 90%;
+        width: 90%;
+        z-index: 2;
+
+        @include mobile {
+            flex-basis: 100%;
+            width: 100%;
+        }
+    }
+
+    @include mobile {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+    }
+}

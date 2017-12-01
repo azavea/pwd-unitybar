@@ -1,0 +1,124 @@
+.pwd-unity-bar .app-switcher-menu {
+    display: flex;
+    flex-flow: row wrap;
+    align-items: flex-start;
+    justify-content: flex-start;
+    border-right: 2px solid $pwdub-active;
+    border-bottom: 2px solid $pwdub-active;
+    background-color: $pwdub-white;
+
+    @include tablet {
+        flex-flow: column nowrap;
+        align-items: stretch;
+    }
+
+    @include mobile {
+        border: 0;
+    }
+
+    > .menu-header {
+        display: flex;
+        flex-flow: row nowrap;
+        align-items: center;
+        justify-content: flex-start;
+        order: 1;
+        width: 50%;
+        height: $pwdub-app-switcher-gutter;
+        padding-left: $pwdub-app-switcher-gutter;
+        background-color: $pwdub-active;
+
+        @include tablet {
+            justify-content: center;
+            order: 1;
+            width: auto;
+            padding-left: 0;
+        }
+
+        > .heading {
+            color: $pwdub-white;
+            font-size: 18px;
+            font-weight: bold;
+
+            @include responsive(800px) {
+                font-size: 16px;
+            }
+        }
+    }
+
+    > .more-resources {
+        display: flex;
+        flex-flow: row nowrap;
+        align-items: center;
+        justify-content: flex-start;
+        order: 2;
+        width: 50%;
+        height: $pwdub-app-switcher-gutter;
+        padding-left: $pwdub-app-switcher-gutter;
+        background-color: $pwdub-active;
+        font-size: 14px;
+
+        @include tablet {
+            justify-content: center;
+            order: 5;
+            width: 100%;
+            padding: 0;
+            text-align: center;
+        }
+
+        @include responsive(800px) {
+            font-size: 14px;
+        }
+
+        > .link {
+            @include delinkify($pwdub-white);
+        }
+    }
+
+    > .app-group {
+
+        &.-all-properties {
+            flex: none;
+            order: 3;
+            width: 50%;
+
+            @include tablet {
+                order: 2;
+                width: auto;
+            }
+        }
+
+        &.-retrofit-developers {
+            flex: none;
+            order: 4;
+            width: 50%;
+            border-left: 1px solid $pwdub-v-lt-gray;
+
+            @include tablet {
+                order: 4;
+                width: auto;
+                border-top: 1px solid $pwdub-v-lt-gray;
+                border-left: 0;
+            }
+        }
+
+        &.-retrofit-properties {
+            flex: none;
+            order: 5;
+            width: 100%;
+            border-top: 1px solid $pwdub-v-lt-gray;
+
+            > .app-summary {
+                width: calc(50% - 2 * #{$pwdub-app-switcher-gutter});
+            }
+
+            @include tablet {
+                order: 3;
+                width: auto;
+
+                > .app-summary {
+                    width: auto;
+                }
+            }
+        }
+    }
+}

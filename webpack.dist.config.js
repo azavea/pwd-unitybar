@@ -15,6 +15,7 @@ const config = {
                 loader: 'babel-loader',
                 exclude: /node_modules/,
                 options: {
+                    plugins: ['transform-runtime'],
                     presets: ['es2015', 'react'],
                 },
             },

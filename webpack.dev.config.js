@@ -49,7 +49,7 @@ module.exports = {
             options:
             {
                 presets:['es2015', 'react'],
-                plugins: ['transform-class-properties'],
+                plugins: ['transform-runtime', 'transform-class-properties'],
                 env: {
                     development: {
                         presets: ['react-hmre'],

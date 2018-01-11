@@ -32,6 +32,7 @@
         position: absolute;
         top: 100%;
         right: 0;
+        min-width: 132px;  // Tries to round to whole pixel to avoid rendering artifact in IE11.
         margin: 0;
         padding: 8px 16px;
         background-color: $pwdub-active;

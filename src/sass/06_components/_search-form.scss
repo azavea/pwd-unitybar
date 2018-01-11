@@ -31,7 +31,7 @@
     }
 
     > .field {
-        width: 100%;
+        flex: auto;
         min-width: 100px;
         height: 38px;
         padding-right: 8px;
@@ -48,8 +48,8 @@
     }
 
     > .action {
-        @include remove;
         @include debuttonify;
+        display: none;
         height: 34px;
         padding: 0 8px;
         border: 2px solid $pwdub-white;
@@ -61,7 +61,7 @@
     }
 
     > .field:focus + .action {
-        @include restore;
+        display: block;
     }
 }
 

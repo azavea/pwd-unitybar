@@ -25,6 +25,7 @@
         width: $pwdub-app-switcher-gutter;
         margin-right: 8px;
         cursor: pointer;
+        outline: 0;
         z-index: 11;
 
         > .icon {
@@ -34,6 +35,10 @@
             &.-back {
                 @include remove;
             }
+        }
+
+        &:focus > .icon {
+            outline: rgba($pwdub-v-lt-gray, .6) dotted 1px;
         }
 
         &:hover {

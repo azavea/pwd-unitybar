@@ -99,4 +99,19 @@
             background-color: $pwdub-purple;
         }
     }
+
+    .app-switcher.-on {
+        > .toggle,
+        > .app-switcher-menu > .menu-header,
+        > .app-switcher-menu > .more-resources {
+            background-color: $pwdub-lt-purple;
+        }
+    }
+
+    .additional-actions.-on {
+        > .toggle,
+        > .actions-menu {
+            background-color: $pwdub-lt-purple;
+        }
+    }
 }

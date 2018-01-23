@@ -1,3 +1,7 @@
+## 0.1.2
+
+- Include cross-browser UI fixes
+
 ## 0.1.1
 
 - Add babel-runtime for IE11 ES6 support

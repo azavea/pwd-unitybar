@@ -11,11 +11,16 @@
         display: block;
         align-self: stretch;
         width: $pwdub-app-switcher-gutter;
+        outline: 0;
         cursor: pointer;
 
         > .icon {
             width: 24px;
             height: 18px;
+        }
+
+        &:focus > .icon {
+            outline: rgba($pwdub-v-lt-gray, .6) dotted 1px;
         }
 
         &:hover {
@@ -32,6 +37,7 @@
         position: absolute;
         top: 100%;
         right: 0;
+        min-width: 132px;  // Tries to round to whole pixel to avoid rendering artifact in IE11.
         margin: 0;
         padding: 8px 16px;
         background-color: $pwdub-active;

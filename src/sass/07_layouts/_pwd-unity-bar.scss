@@ -12,7 +12,7 @@
     z-index: $pwdub-z-index;
 
     > .app-switcher {
-        flex: 0 1 calc((100% - 85px)/2);
+        width: calc((100% - 85px)/2);
     }
 
     > .logo {
@@ -27,6 +27,6 @@
     }
 
     > .app-actions {
-        flex: 0 1 calc((100% - 85px)/2);
+        width: calc((100% - 85px)/2);
     }
 }

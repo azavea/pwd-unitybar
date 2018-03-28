@@ -1,3 +1,7 @@
+## 0.1.3
+
+- Add postcss-loader and autoprefixer
+
 ## 0.1.2
 
 - Include cross-browser UI fixes

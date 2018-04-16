@@ -49,13 +49,13 @@ export default function AuthenticatedActionsMenu({
                 role="menuitem"
                 key={i}
             >
-                <button
+                <a
                     className="link"
                     tabIndex={tabIndex}
                     onClick={onClickHandler}
                 >
                     {name}
-                </button>
+                </a>
             </li>)) : null;
 
     const authenticatedActionsOpenCSSClass = authenticatedActionsOpen ? '-on' : '';

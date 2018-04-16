@@ -1,3 +1,7 @@
+## 0.1.4
+
+- Update custom menu action style
+
 ## 0.1.3
 
 - Add postcss-loader and autoprefixer

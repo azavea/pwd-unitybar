@@ -2392,7 +2392,7 @@ function AuthenticatedActionsMenu(_ref) {
                 key: i
             },
             _react2.default.createElement(
-                'button',
+                'a',
                 {
                     className: 'link',
                     tabIndex: tabIndex,

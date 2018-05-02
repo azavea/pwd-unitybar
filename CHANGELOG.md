@@ -1,3 +1,7 @@
+## 0.1.5
+
+- Left-align settings menu action items
+
 ## 0.1.4
 
 - Update custom menu action style

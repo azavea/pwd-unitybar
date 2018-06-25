@@ -29,9 +29,9 @@ export const customMenuOptionPropType = shape({
 });
 
 export const PARCEL_VIEWER = 'Parcel Viewer';
-export const RETROFIT_MAP = 'Stormwater Retrofit Map';
+export const RETROFIT_MAP = 'Stormwater Connect Map';
 export const CREDITS_EXPLORER = 'Stormwater Credits Explorer';
-export const RETROFIT_CAMPAIGN = 'Stormwater Retrofit Campaign';
+export const RETROFIT_CAMPAIGN = 'Stormwater Connect';
 
 export const pwdAppConfig = [
     {

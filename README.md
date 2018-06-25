@@ -131,5 +131,5 @@ following props:
 | customMenuOptions | array | An array of [custom menu options](https://github.com/azavea/pwd-unitybar/blob/develop/src/js/constants.js#L26) | `null` |
 | parcelViewerUrl | string | Link to the Stormwater Parcel Viewer website | `""` |
 | creditsExplorerUrl | string | Link to the Stormwater Credits Explorer website | `""` |
-| retrofitMapUrl | string | Link to the Stormwater Retrofit Map website. | `""` |
-| retrofitCampaignUrl | string | Link to the Stormwater Retrofit Campaign website. | `""` |
+| retrofitMapUrl | string | Link to the Stormwater Connect Map website. | `""` |
+| retrofitCampaignUrl | string | Link to the Stormwater Connect website. | `""` |

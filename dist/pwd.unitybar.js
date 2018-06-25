@@ -605,9 +605,9 @@ var customMenuOptionPropType = exports.customMenuOptionPropType = (0, _propTypes
 });
 
 var PARCEL_VIEWER = exports.PARCEL_VIEWER = 'Parcel Viewer';
-var RETROFIT_MAP = exports.RETROFIT_MAP = 'Stormwater Retrofit Map';
+var RETROFIT_MAP = exports.RETROFIT_MAP = 'Stormwater Connect Map';
 var CREDITS_EXPLORER = exports.CREDITS_EXPLORER = 'Stormwater Credits Explorer';
-var RETROFIT_CAMPAIGN = exports.RETROFIT_CAMPAIGN = 'Stormwater Retrofit Campaign';
+var RETROFIT_CAMPAIGN = exports.RETROFIT_CAMPAIGN = 'Stormwater Connect';
 
 var pwdAppConfig = exports.pwdAppConfig = [{
     appCSSClass: '-all-properties',
@@ -619,7 +619,7 @@ var pwdAppConfig = exports.pwdAppConfig = [{
     appCSSClass: '-retrofit-developers',
     appHeading: 'For stormwater infrastructure developers',
     appName: RETROFIT_MAP,
-    appDescription: 'Find commercial, industrial, and multifamily\n            properties interested in a stormwater retrofit.',
+    appDescription: 'Find commercial, industrial, and multifamily\n            properties interested in a stormwater retrofit project.',
     appUrl: ''
 }, {
     appCSSClass: '-retrofit-properties',
@@ -628,7 +628,7 @@ var pwdAppConfig = exports.pwdAppConfig = [{
     appDescription: 'See how much you can save by retrofitting stormwater\n            management infrastructure into your property.',
     appUrl: '',
     secondAppName: RETROFIT_CAMPAIGN,
-    secondAppDescription: 'Learn how a grant from the Philadelphia Water\n            Department can pay for your stormwater retrofit.',
+    secondAppDescription: 'Learn how a grant from the Philadelphia Water\n            Department can pay for your stormwater retrofit project.',
     secondAppUrl: ''
 }];
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(12)))

@@ -47,7 +47,7 @@ export const pwdAppConfig = [
         appHeading: 'For stormwater infrastructure developers',
         appName: RETROFIT_MAP,
         appDescription: `Find commercial, industrial, and multifamily
-            properties interested in a stormwater retrofit.`,
+            properties interested in a stormwater retrofit project.`,
         appUrl: '',
     },
     {
@@ -59,7 +59,7 @@ export const pwdAppConfig = [
         appUrl: '',
         secondAppName: RETROFIT_CAMPAIGN,
         secondAppDescription: `Learn how a grant from the Philadelphia Water
-            Department can pay for your stormwater retrofit.`,
+            Department can pay for your stormwater retrofit project.`,
         secondAppUrl: '',
     },
 ];

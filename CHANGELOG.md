@@ -1,3 +1,7 @@
+## 0.1.6
+
+- Text changes for renamed Stormwater Connect apps
+
 ## 0.1.5
 
 - Left-align settings menu action items

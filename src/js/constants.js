@@ -29,8 +29,8 @@ export const customMenuOptionPropType = shape({
 });
 
 export const PARCEL_VIEWER = 'Parcel Viewer';
-export const RETROFIT_MAP = 'Stormwater Connect Map';
-export const CREDITS_EXPLORER = 'Stormwater Credits Explorer';
+export const RETROFIT_MAP = 'Stormwater Connect';
+export const CREDITS_EXPLORER = 'Credits Explorer';
 export const RETROFIT_CAMPAIGN = 'Stormwater Connect';
 
 export const pwdAppConfig = [
@@ -38,13 +38,13 @@ export const pwdAppConfig = [
         appCSSClass: '-all-properties',
         appHeading: 'For all properties',
         appName: PARCEL_VIEWER,
-        appDescription: `Information about your property, water account,
-            and stormwater billing charges.`,
+        appDescription: `Information about your property and the stormwater
+            charge on your bill.`,
         appUrl: '',
     },
     {
         appCSSClass: '-retrofit-developers',
-        appHeading: 'For stormwater infrastructure developers',
+        appHeading: 'For stormwater management vendors',
         appName: RETROFIT_MAP,
         appDescription: `Find commercial, industrial, and multifamily
             properties interested in a stormwater retrofit project.`,
@@ -54,8 +54,8 @@ export const pwdAppConfig = [
         appCSSClass: '-retrofit-properties',
         appHeading: 'For commercial, industrial, and multifamily properties',
         appName: CREDITS_EXPLORER,
-        appDescription: `See how much you can save by retrofitting stormwater
-            management infrastructure into your property.`,
+        appDescription: `See how much you can save by installing a stormwater
+            retrofit project.`,
         appUrl: '',
         secondAppName: RETROFIT_CAMPAIGN,
         secondAppDescription: `Learn how a grant from the Philadelphia Water

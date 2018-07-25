@@ -1,3 +1,7 @@
+## 0.1.7
+
+- Update descriptions in app switcher
+
 ## 0.1.6
 
 - Text changes for renamed Stormwater Connect apps

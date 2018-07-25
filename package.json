@@ -1,6 +1,6 @@
 {
   "name": "pwd-unitybar",
-  "version": "0.1.6",
+  "version": "0.1.7",
   "description": "Unified header bar for PWD Stormwater web apps",
   "main": "dist/pwd.unitybar.min.js",
   "scripts": {

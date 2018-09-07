@@ -24,6 +24,8 @@ export default function AppSummary({
                     className={`link ${currentLinkCSSClass}`}
                     tabIndex={tabIndex}
                     href={url}
+                    target="_blank"
+                    rel="noopener noreferrer"
                 >
                     {name}
                 </a>

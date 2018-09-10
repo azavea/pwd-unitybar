@@ -91,6 +91,8 @@ export default function AppSwitcher({
                         className="link"
                         tabIndex={tabIndex}
                         href="http://www.phila.gov/water/wu/stormwater/"
+                        target="_blank"
+                        rel="noopener noreferrer"
                     >
                         More PWD stormwater resources ➔
                     </a>

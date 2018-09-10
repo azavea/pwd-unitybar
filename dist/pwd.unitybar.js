@@ -1578,7 +1578,9 @@ function AppSwitcher(_ref) {
                     {
                         className: 'link',
                         tabIndex: tabIndex,
-                        href: 'http://www.phila.gov/water/wu/stormwater/'
+                        href: 'http://www.phila.gov/water/wu/stormwater/',
+                        target: '_blank',
+                        rel: 'noopener noreferrer'
                     },
                     'More PWD stormwater resources \u2794'
                 )
@@ -2300,7 +2302,9 @@ function AppSummary(_ref) {
                 {
                     className: 'link ' + currentLinkCSSClass,
                     tabIndex: tabIndex,
-                    href: url
+                    href: url,
+                    target: '_blank',
+                    rel: 'noopener noreferrer'
                 },
                 name
             )

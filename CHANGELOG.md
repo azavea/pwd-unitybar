@@ -1,3 +1,7 @@
+## 0.1.8
+
+- Open app switcher links in new tabs
+
 ## 0.1.7
 
 - Update descriptions in app switcher

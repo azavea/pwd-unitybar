@@ -24,7 +24,7 @@
         width: 50%;
         height: $pwdub-app-switcher-gutter;
         padding-left: $pwdub-app-switcher-gutter;
-        background-color: $pwdub-active;
+        background-color: $pwdub-blue;
 
         @include tablet {
             justify-content: center;
@@ -41,7 +41,7 @@
             @include responsive(800px) {
                 font-size: 16px;
             }
-            
+
             @include mobile {
                 margin-left: $pwdub-app-switcher-gutter-mobile;
                 font-size: 14px;
@@ -58,7 +58,7 @@
         width: 50%;
         height: $pwdub-app-switcher-gutter;
         padding-left: $pwdub-app-switcher-gutter;
-        background-color: $pwdub-active;
+        background-color: $pwdub-blue;
         font-size: 14px;
 
         @include tablet {

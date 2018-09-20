@@ -61,8 +61,8 @@ module.exports = [
         output: Object.assign({}, config.output, {
             filename: 'pwd.unitybar.min.js',
         }),
-        plugins: [
-            new webpack.optimize.UglifyJsPlugin(),
-        ],
+        optimization: {
+            minimize: true,
+        },
     }),
 ];

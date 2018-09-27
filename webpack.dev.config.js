@@ -14,11 +14,6 @@ module.exports = {
         filename: "pwd.unitybar.[hash].js"
     },
     plugins: [
-        new webpack.optimize.CommonsChunkPlugin({
-            name: 'vendor',
-            filename: 'vendor.pwd.unitybar.[hash].js',
-            minChunks: Infinity,
-        }),
         new webpack.DefinePlugin({
             'process.env': {
                 'NODE_ENV': JSON.stringify('development'),

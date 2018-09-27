@@ -1,3 +1,7 @@
+## 0.1.9
+
+- Upgrade dependencies reported as vulnerable by `npm audit`
+
 ## 0.1.8
 
 - Open app switcher links in new tabs

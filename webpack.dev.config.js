@@ -1,5 +1,6 @@
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 
 module.exports = {
     entry: {
@@ -14,6 +15,11 @@ module.exports = {
         filename: "pwd.unitybar.[hash].js"
     },
     plugins: [
+        new BundleAnalyzerPlugin({
+            analyzerMode: 'server',
+            analyzerHost: '0.0.0.0',
+            analyzerPort: 7778,
+        }),
         new webpack.DefinePlugin({
             'process.env': {
                 'NODE_ENV': JSON.stringify('development'),

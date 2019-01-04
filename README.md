@@ -84,7 +84,7 @@ vim CHANGELOG.md
 vim package.json
 vim package-lock.json
 ./scripts/cibuild
-git add CHANGELOG.md package.json dist/pwd.unitybar.js dist/pwd.unitybar.min.js
+git add CHANGELOG.md package.json package-lock.json dist/pwd.unitybar.js dist/pwd.unitybar.min.js
 git commit -m "1.2.3"
 git flow release publish 1.2.3
 git flow release finish 1.2.3

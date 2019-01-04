@@ -1,6 +1,7 @@
 'use strict';
 const path = require('path');
 const webpack = require('webpack');
+const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 
 const outputPath = path.join(__dirname, 'dist');
 
@@ -38,17 +39,29 @@ const config = {
     resolve: {
         extensions: ['.js', '.jsx'],
     },
-    externals: [
-        'react',
-        'react-dom',
-    ],
+    externals: {
+        react: {
+            root: 'React',
+            commonjs2: 'react',
+            commonjs: 'react',
+            amd: 'react',
+            umd: 'react',
+        },
+        'react-dom': {
+            root: 'ReactDOM',
+            commonjs2: 'react-dom',
+            commonjs: 'react-dom',
+            amd: 'react-dom',
+            umd: 'react-dom',
+        },
+    },
     output: {
         path: outputPath,
         filename: '',
         library: 'pwd-unitybar',
         libraryTarget: 'umd',
         umdNamedDefine: true,
-    }
+    },
 };
 
 module.exports = [
@@ -64,5 +77,13 @@ module.exports = [
         optimization: {
             minimize: true,
         },
+        plugins: [
+            new webpack.LoaderOptionsPlugin({
+                minimize: true,
+            }),
+            new BundleAnalyzerPlugin({
+                analyzerMode: 'static',
+            }),
+        ]
     }),
 ];

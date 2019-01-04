@@ -31,6 +31,7 @@ This will build and server the app on port 7777.
 | Service           | Port                            |
 | ----------------- | ------------------------------- |
 | PWD UnityBar demo | [`7777`](http://localhost:7777) |
+| Webpack Bundle Analyzer | [`7778`](http://localhost:7778)      |
 
 ### Testing
 

@@ -1,3 +1,8 @@
+## 0.1.10
+
+- Declare React & React-DOM as peer dependencies
+- Add Webpack-Bundle-Analyzer to display bundle composition
+
 ## 0.1.9
 
 - Upgrade dependencies reported as vulnerable by `npm audit`

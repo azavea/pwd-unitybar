@@ -40,43 +40,61 @@ module.exports = {
             filename: 'index.html',
             template: 'demo.html'
         }),
-        new webpack.HotModuleReplacementPlugin()
+        new webpack.HotModuleReplacementPlugin(),
     ],
     module: {
-        rules: [{
-            test: /\.jsx?$/,
-            exclude: /node_modules/,
-            loader: 'babel-loader',
-            options:
+        rules: [
             {
-                presets: [
-                    '@babel/preset-env',
-                    '@babel/preset-react',
+                test: /\.jsx?$/,
+                enforce: 'pre',
+                use: [
+                    {
+                        loader: require.resolve('prettier-loader'),
+                        options: {
+                            resolveConfigOptions: {
+                                editorconfig: true,
+                                config: './.prettierrc.json',
+                            },
+                        },
+                    },
                 ],
-                plugins: [
-                    '@babel/plugin-proposal-class-properties',
+                exclude: /node_modules/,
+            },
+            {
+                test: /\.jsx?$/,
+                exclude: /node_modules/,
+                loader: 'babel-loader',
+                options:
+                {
+                    presets: [
+                        '@babel/preset-env',
+                        '@babel/preset-react',
+                    ],
+                    plugins: [
+                        '@babel/plugin-proposal-class-properties',
+                    ],
+                },
+            },
+            {
+                test: /\.(css|scss)$/,
+                exclude: /node_modules/,
+                use: [
+                    'style-loader',
+                    'css-loader',
+                    'postcss-loader',
+                    'sass-loader',
                 ],
             },
-        },
-        {
-            test: /\.(css|scss)$/,
-            exclude: /node_modules/,
-            use: [
-                'style-loader',
-                'css-loader',
-                'postcss-loader',
-                'sass-loader',
-            ],
-        },
-        {
-            test: /\.(jpg|gif|png|svg|ttf|eot|woff|woff2)$/,
-            use: 'url-loader',
-        },
-        {
-            test: /\.jsx?/,
-            exclude: [/node_modules/, /\.json$/],
-            loader: 'eslint-loader',
-        }]
+            {
+                test: /\.(jpg|gif|png|svg|ttf|eot|woff|woff2)$/,
+                use: 'url-loader',
+            },
+            {
+                test: /\.jsx?/,
+                exclude: [/node_modules/, /\.json$/],
+                loader: 'eslint-loader',
+            },
+        ]
     },
     devServer: {
         historyApiFallback: {

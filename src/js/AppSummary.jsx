@@ -16,10 +16,7 @@ export default function AppSummary({
 
     return (
         <div className="app-summary">
-            <h4
-                className="app-name"
-                aria-current={current}
-            >
+            <h4 className="app-name" aria-current={current}>
                 <a
                     className={`link ${currentLinkCSSClass}`}
                     tabIndex={tabIndex}
@@ -30,9 +27,7 @@ export default function AppSummary({
                     {name}
                 </a>
             </h4>
-            <p className="desc">
-                {description}
-            </p>
+            <p className="desc">{description}</p>
         </div>
     );
 }

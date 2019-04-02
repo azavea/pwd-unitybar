@@ -25,22 +25,23 @@ class Demo extends Component {
     }
 
     handleSearchChange(searchValue) {
-        this.setState(state => Object.assign({}, state, {
-            searchValue,
-        }));
+        this.setState(state =>
+            Object.assign({}, state, {
+                searchValue,
+            }),
+        );
     }
 
     handleSearchSubmit(selectedValue) {
-        this.setState(state => Object.assign({}, state, {
-            selectedValue,
-        }));
+        this.setState(state =>
+            Object.assign({}, state, {
+                selectedValue,
+            }),
+        );
     }
 
     render() {
-        const {
-            searchValue,
-            selectedValue,
-        } = this.state;
+        const { searchValue, selectedValue } = this.state;
 
         return (
             <div>
@@ -48,11 +49,17 @@ class Demo extends Component {
                     currentAppName="PWD UnityBar"
                     authenticated
                     hasMapAction
-                    mapActionHandler={() => { window.console.log('map action clicked'); }}
+                    mapActionHandler={() => {
+                        window.console.log('map action clicked');
+                    }}
                     hasHelpAction
-                    helpActionHandler={() => { window.console.log('help action clicked'); }}
+                    helpActionHandler={() => {
+                        window.console.log('help action clicked');
+                    }}
                     hasSettings
-                    settingsHandler={() => { window.console.log('settings action clicked'); }}
+                    settingsHandler={() => {
+                        window.console.log('settings action clicked');
+                    }}
                     searchChangeHandler={this.handleSearchChange}
                     searchSubmitHandler={this.handleSearchSubmit}
                     searchBoxValue={searchValue}
@@ -63,23 +70,12 @@ class Demo extends Component {
                 />
                 <div id="output-region">
                     <div>
-                        <p>
-                            Search term:
-                            {' '}
-                            {searchValue}
-                        </p>
+                        <p>Search term: {searchValue}</p>
                     </div>
                     <div>
-                        <p>
-                            Search selection:
-                            {' '}
-                            {selectedValue}
-                        </p>
+                        <p>Search selection: {selectedValue}</p>
                     </div>
-                    <button
-                        type="button"
-                        onClick={this.clearSearchBoxValue}
-                    >
+                    <button type="button" onClick={this.clearSearchBoxValue}>
                         Clear search box
                     </button>
                 </div>

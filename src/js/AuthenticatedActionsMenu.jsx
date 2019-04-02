@@ -2,13 +2,9 @@
 /* eslint-disable jsx-a11y/click-events-have-key-events */
 /* eslint-disable jsx-a11y/no-static-element-interactions */
 import React from 'react';
-import {
-    arrayOf, bool, func, string,
-} from 'prop-types';
+import { arrayOf, bool, func, string } from 'prop-types';
 
-import {
-    customMenuOptionPropType,
-} from './constants';
+import { customMenuOptionPropType } from './constants';
 
 export default function AuthenticatedActionsMenu({
     hasSettings,
@@ -39,10 +35,7 @@ export default function AuthenticatedActionsMenu({
         );
 
         return (
-            <li
-                className="listitem"
-                role="menuitem"
-            >
+            <li className="listitem" role="menuitem">
                 {settingsElement}
             </li>
         );
@@ -50,49 +43,50 @@ export default function AuthenticatedActionsMenu({
 
     const customMenuItems = customMenuOptions
         ? customMenuOptions.map(({ name, onClickHandler }) => (
-            <li
-                className="listitem"
-                role="menuitem"
-                key={name + onClickHandler.toString()}
-            >
-                <a
-                    className="link"
-                    tabIndex={tabIndex}
-                    onClick={onClickHandler}
-                >
-                    {name}
-                </a>
-            </li>
-        )) : null;
+              <li
+                  className="listitem"
+                  role="menuitem"
+                  key={name + onClickHandler.toString()}
+              >
+                  <a
+                      className="link"
+                      tabIndex={tabIndex}
+                      onClick={onClickHandler}
+                  >
+                      {name}
+                  </a>
+              </li>
+          ))
+        : null;
 
-    const authenticatedActionsOpenCSSClass = authenticatedActionsOpen ? '-on' : '';
+    const authenticatedActionsOpenCSSClass = authenticatedActionsOpen
+        ? '-on'
+        : '';
 
     return (
-        <div className={`additional-actions ${authenticatedActionsOpenCSSClass}`}>
+        <div
+            className={`additional-actions ${authenticatedActionsOpenCSSClass}`}
+        >
             <button
                 className="toggle"
                 type="button"
                 title="More actions"
                 name="actions-menu-toggle"
                 aria-label="More actions"
-                onClick={authenticatedActionsOpen
-                    ? closeAuthenticatedActions : openAuthenticatedActions}
+                onClick={
+                    authenticatedActionsOpen
+                        ? closeAuthenticatedActions
+                        : openAuthenticatedActions
+                }
             >
                 <svg className="icon">
                     <use xlinkHref="#pwdub-icon-caret-down" />
                 </svg>
             </button>
-            <ul
-                className="actions-menu"
-                role="menu"
-                aria-hidden="true"
-            >
+            <ul className="actions-menu" role="menu" aria-hidden="true">
                 {customMenuItems}
                 {settingsMenuItem}
-                <li
-                    className="listitem"
-                    role="menuitem"
-                >
+                <li className="listitem" role="menuitem">
                     <a
                         className="link"
                         tabIndex={tabIndex}

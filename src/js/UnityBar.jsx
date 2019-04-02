@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
-import {
-    arrayOf, bool, func, string,
-} from 'prop-types';
+import { arrayOf, bool, func, string } from 'prop-types';
 import onClickOutside from 'react-onclickoutside';
 
 import {
@@ -34,8 +32,12 @@ class UnityBar extends Component {
         };
         this.openAppSwitcher = this.openAppSwitcher.bind(this);
         this.closeAppSwitcher = this.closeAppSwitcher.bind(this);
-        this.openAuthenticatedActions = this.openAuthenticatedActions.bind(this);
-        this.closeAuthenticatedActions = this.closeAuthenticatedActions.bind(this);
+        this.openAuthenticatedActions = this.openAuthenticatedActions.bind(
+            this,
+        );
+        this.closeAuthenticatedActions = this.closeAuthenticatedActions.bind(
+            this,
+        );
         this.contractSearchBox = this.contractSearchBox.bind(this);
         this.expandSearchBox = this.expandSearchBox.bind(this);
         this.closeAllElements = this.closeAllElements.bind(this);
@@ -137,7 +139,7 @@ class UnityBar extends Component {
             searchBoxExpanded,
         } = this.state;
 
-        const appConfig = pwdAppConfig.map((config) => {
+        const appConfig = pwdAppConfig.map(config => {
             switch (config.appName) {
                 case PARCEL_VIEWER:
                     return Object.assign({}, config, {

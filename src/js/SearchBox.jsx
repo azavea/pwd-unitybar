@@ -20,14 +20,8 @@ export default function SearchBox({
     };
 
     return (
-        <div
-            className="search-form"
-            role="search"
-        >
-            <svg
-                className="icon"
-                aria-hidden="true"
-            >
+        <div className="search-form" role="search">
+            <svg className="icon" aria-hidden="true">
                 <use xlinkHref="#pwdub-icon-search" />
             </svg>
             <input

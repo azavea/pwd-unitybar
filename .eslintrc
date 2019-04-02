@@ -10,9 +10,15 @@
         "react"
     ],
     "rules": {
-        "indent": [2, 4, { "SwitchCase": 1, "VariableDeclarator": 1 }],
-        "react/jsx-indent": [2,4],
+        "indent": [0],
+        "react/jsx-indent": [0],
         "react/jsx-indent-props": [2,4],
-        "import/no-extraneous-dependencies": ["error", {"devDependencies": true, "peerDependencies": true}]
+        "import/no-extraneous-dependencies": ["error", {"devDependencies": true, "peerDependencies": true}],
+        "implicit-arrow-linebreak": [0],
+        "function-paren-newline": [0],
+        "react/jsx-one-expression-per-line": [0],
+        "operator-linebreak": [0],
+        "object-curly-newline": [0],
+        "arrow-parens": [0]
     }
 }

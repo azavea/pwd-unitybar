@@ -1,7 +1,5 @@
 import React from 'react';
-import {
-    arrayOf, bool, func, shape, string,
-} from 'prop-types';
+import { arrayOf, bool, func, shape, string } from 'prop-types';
 
 import AppSummary from './AppSummary';
 
@@ -12,55 +10,54 @@ export default function AppSwitcher({
     closeAppSwitcher,
     appConfig,
 }) {
-    const pwdAppLinks = appConfig.map(({
-        appCSSClass,
-        appHeading,
-        appName,
-        appDescription,
-        appUrl,
-        secondAppName,
-        secondAppDescription,
-        secondAppUrl,
-    }) => {
-        const secondaryApp = secondAppName && secondAppDescription && secondAppUrl ? (
-            <AppSummary
-                appSwitcherOpen={appSwitcherOpen}
-                name={secondAppName}
-                description={secondAppDescription}
-                url={secondAppUrl}
-                current={secondAppName === currentAppName}
-            />
-        ) : null;
+    const pwdAppLinks = appConfig.map(
+        ({
+            appCSSClass,
+            appHeading,
+            appName,
+            appDescription,
+            appUrl,
+            secondAppName,
+            secondAppDescription,
+            secondAppUrl,
+        }) => {
+            const secondaryApp =
+                secondAppName && secondAppDescription && secondAppUrl ? (
+                    <AppSummary
+                        appSwitcherOpen={appSwitcherOpen}
+                        name={secondAppName}
+                        description={secondAppDescription}
+                        url={secondAppUrl}
+                        current={secondAppName === currentAppName}
+                    />
+                ) : null;
 
-        return (
-            <div
-                className={`app-group ${appCSSClass}`}
-                key={appName}
-                role="button"
-            >
-                <h3 className="heading">
-                    {appHeading}
-                </h3>
-                <AppSummary
-                    appSwitcherOpen={appSwitcherOpen}
-                    name={appName}
-                    description={appDescription}
-                    url={appUrl}
-                    current={appName === currentAppName}
-                />
-                {secondaryApp}
-            </div>
-        );
-    });
+            return (
+                <div
+                    className={`app-group ${appCSSClass}`}
+                    key={appName}
+                    role="button"
+                >
+                    <h3 className="heading">{appHeading}</h3>
+                    <AppSummary
+                        appSwitcherOpen={appSwitcherOpen}
+                        name={appName}
+                        description={appDescription}
+                        url={appUrl}
+                        current={appName === currentAppName}
+                    />
+                    {secondaryApp}
+                </div>
+            );
+        },
+    );
 
     const appSwitcherOpenCSSClass = appSwitcherOpen ? '-on' : '';
     const tabIndex = appSwitcherOpen ? '0' : '-1';
 
     return (
         <div className={`app-switcher ${appSwitcherOpenCSSClass}`}>
-            <h1 className="appname">
-                {currentAppName}
-            </h1>
+            <h1 className="appname">{currentAppName}</h1>
             <button
                 className="toggle"
                 type="button"
@@ -72,21 +69,13 @@ export default function AppSwitcher({
                 <svg className="icon -menu">
                     <use xlinkHref="#pwdub-icon-menu" />
                 </svg>
-                <svg
-                    className="icon -back"
-                    aria-hidden="true"
-                >
+                <svg className="icon -back" aria-hidden="true">
                     <use xlinkHref="#pwdub-icon-back" />
                 </svg>
             </button>
-            <div
-                className="app-switcher-menu"
-                aria-hidden="true"
-            >
+            <div className="app-switcher-menu" aria-hidden="true">
                 <header className="menu-header">
-                    <h2 className="heading">
-                        Stormwater Management Apps
-                    </h2>
+                    <h2 className="heading">Stormwater Management Apps</h2>
                 </header>
                 {pwdAppLinks}
                 <div className="more-resources">
@@ -114,13 +103,15 @@ AppSwitcher.propTypes = {
     appSwitcherOpen: bool.isRequired,
     openAppSwitcher: func.isRequired,
     closeAppSwitcher: func.isRequired,
-    appConfig: arrayOf(shape({
-        appCSSClass: string,
-        appHeading: string,
-        appName: string,
-        appUrl: string,
-        secondAppName: string,
-        secondAppDescription: string,
-        secondAppUrl: string,
-    })),
+    appConfig: arrayOf(
+        shape({
+            appCSSClass: string,
+            appHeading: string,
+            appName: string,
+            appUrl: string,
+            secondAppName: string,
+            secondAppDescription: string,
+            secondAppUrl: string,
+        }),
+    ),
 };

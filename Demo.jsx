@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { render } from 'react-dom';
+import { hot } from 'react-hot-loader/root';
 
 import UnityBar from './src/js/UnityBar';
 
@@ -64,15 +64,22 @@ class Demo extends Component {
                 <div id="output-region">
                     <div>
                         <p>
-                            Search term: {searchValue}
+                            Search term:
+                            {' '}
+                            {searchValue}
                         </p>
                     </div>
                     <div>
                         <p>
-                            Search selection: {selectedValue}
+                            Search selection:
+                            {' '}
+                            {selectedValue}
                         </p>
                     </div>
-                    <button onClick={this.clearSearchBoxValue}>
+                    <button
+                        type="button"
+                        onClick={this.clearSearchBoxValue}
+                    >
                         Clear search box
                     </button>
                 </div>
@@ -81,7 +88,4 @@ class Demo extends Component {
     }
 }
 
-render(
-    <Demo />,
-    document.getElementById('root'),
-);
+export default hot(Demo);

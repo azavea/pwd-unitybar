@@ -1,5 +1,10 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
+/* eslint-disable jsx-a11y/click-events-have-key-events */
+/* eslint-disable jsx-a11y/no-static-element-interactions */
 import React from 'react';
-import { arrayOf, bool, func, string } from 'prop-types';
+import {
+    arrayOf, bool, func, string,
+} from 'prop-types';
 
 import {
     customMenuOptionPropType,
@@ -30,7 +35,8 @@ export default function AuthenticatedActionsMenu({
                 onClick={settingsHandler || null}
             >
                 Settings
-            </a>);
+            </a>
+        );
 
         return (
             <li
@@ -42,12 +48,12 @@ export default function AuthenticatedActionsMenu({
         );
     })();
 
-    const customMenuItems = customMenuOptions ?
-        customMenuOptions.map(({ name, onClickHandler }, i) => (
+    const customMenuItems = customMenuOptions
+        ? customMenuOptions.map(({ name, onClickHandler }) => (
             <li
                 className="listitem"
                 role="menuitem"
-                key={i}
+                key={name + onClickHandler.toString()}
             >
                 <a
                     className="link"
@@ -56,7 +62,8 @@ export default function AuthenticatedActionsMenu({
                 >
                     {name}
                 </a>
-            </li>)) : null;
+            </li>
+        )) : null;
 
     const authenticatedActionsOpenCSSClass = authenticatedActionsOpen ? '-on' : '';
 
@@ -68,8 +75,8 @@ export default function AuthenticatedActionsMenu({
                 title="More actions"
                 name="actions-menu-toggle"
                 aria-label="More actions"
-                onClick={authenticatedActionsOpen ?
-                    closeAuthenticatedActions : openAuthenticatedActions}
+                onClick={authenticatedActionsOpen
+                    ? closeAuthenticatedActions : openAuthenticatedActions}
             >
                 <svg className="icon">
                     <use xlinkHref="#pwdub-icon-caret-down" />
@@ -98,6 +105,14 @@ export default function AuthenticatedActionsMenu({
         </div>
     );
 }
+
+AuthenticatedActionsMenu.defaultProps = {
+    hasSettings: false,
+    settingsHandler: () => null,
+    signOutHandler: () => null,
+    settingsUrl: '',
+    customMenuOptions: [],
+};
 
 AuthenticatedActionsMenu.propTypes = {
     hasSettings: bool,

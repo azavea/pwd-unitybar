@@ -1,5 +1,7 @@
 import React from 'react';
-import { arrayOf, bool, func, string } from 'prop-types';
+import {
+    arrayOf, bool, func, string,
+} from 'prop-types';
 
 import {
     customActionPropType,
@@ -60,14 +62,17 @@ export default function AppActions({
                 throw new Error(`Invalid UnityBar props: cannot supply a custom
                     action along with both 'hasMapAction' and 'hasHelpAction'.`);
             }
-            return customActions.map(({ cssClass, icon, title, onClickHandler }) => (
+            return customActions.map(({
+                cssClass, icon, title, onClickHandler,
+            }) => (
                 <AppAction
                     key={title}
                     cssClass={cssClass}
                     icon={icon}
                     title={title}
                     onClickHandler={onClickHandler}
-                />));
+                />
+            ));
         }
         return null;
     })();
@@ -81,7 +86,8 @@ export default function AppActions({
             title={defaultAppActions.map.title}
             icon={defaultAppActions.map.icon}
             onClickHandler={mapActionHandler}
-        />) : null;
+        />
+    ) : null;
 
     const helpIconElement = hasHelpAction && helpActionHandler && (!searchBoxValue) ? (
         <AppAction
@@ -90,7 +96,8 @@ export default function AppActions({
             icon={defaultAppActions.help.icon}
             onClickHandler={helpActionHandler}
             closeAllElements={closeAllElements}
-        />) : null;
+        />
+    ) : null;
 
     const searchBox = hasSearch ? (
         <SearchBox
@@ -100,7 +107,8 @@ export default function AppActions({
             contractSearchBox={contractSearchBox}
             searchBoxValue={searchBoxValue}
             handleSearchBoxChange={handleSearchBoxChange}
-        />) : null;
+        />
+    ) : null;
 
     const authenticatedActions = authenticated && (!searchBoxValue) ? (
         <AuthenticatedActionsMenu
@@ -113,7 +121,8 @@ export default function AppActions({
             settingsUrl={settingsUrl}
             customMenuOptions={customMenuOptions}
             closeAllElements={closeAllElements}
-        />) : null;
+        />
+    ) : null;
 
     const searchBoxExpandedCSS = hasSearch && searchBoxExpanded ? '-search' : '';
 
@@ -127,6 +136,29 @@ export default function AppActions({
         </nav>
     );
 }
+
+AppActions.defaultProps = {
+    authenticated: false,
+    authenticatedActionsOpen: false,
+    openAuthenticatedActions: () => null,
+    closeAuthenticatedActions: () => null,
+    hasSearch: false,
+    searchPlaceholder: '',
+    hasMapAction: false,
+    mapActionHandler: () => null,
+    hasHelpAction: false,
+    helpActionHandler: () => null,
+    customActions: null,
+    hasSettings: false,
+    settingsUrl: '',
+    settingsHandler: () => null,
+    signOutHandler: () => null,
+    customMenuOptions: [],
+    searchBoxExpanded: false,
+    expandSearchBox: () => null,
+    contractSearchBox: () => null,
+    closeAllElements: () => null,
+};
 
 AppActions.propTypes = {
     authenticated: bool,

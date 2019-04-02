@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
-import { arrayOf, bool, func, string } from 'prop-types';
+import {
+    arrayOf, bool, func, string,
+} from 'prop-types';
 import onClickOutside from 'react-onclickoutside';
 
 import {
@@ -42,7 +44,8 @@ class UnityBar extends Component {
     }
 
     clearSearchBoxValue() {
-        this.props.searchChangeHandler('');
+        const { searchChangeHandler } = this.props;
+        searchChangeHandler('');
     }
 
     handleClickOutside() {
@@ -50,7 +53,8 @@ class UnityBar extends Component {
     }
 
     handleSearchBoxChange({ target: { value } }) {
-        this.props.searchChangeHandler(value);
+        const { searchChangeHandler } = this.props;
+        searchChangeHandler(value);
     }
 
     closeAllElements() {
@@ -94,7 +98,8 @@ class UnityBar extends Component {
     }
 
     contractSearchBox() {
-        if (!this.props.searchBoxValue) {
+        const { searchBoxValue } = this.props;
+        if (!searchBoxValue) {
             this.setState({ searchBoxExpanded: false });
         }
     }
@@ -303,6 +308,12 @@ UnityBar.defaultProps = {
     creditsExplorerUrl: '',
     retrofitMapUrl: '',
     retrofitCampaignUrl: '',
+    mapActionHandler: () => null,
+    helpActionHandler: () => null,
+    customActions: [],
+    settingsUrl: '',
+    settingsHandler: () => null,
+    customMenuOptions: [],
 };
 
 export default onClickOutside(UnityBar);

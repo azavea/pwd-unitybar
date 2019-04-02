@@ -4,7 +4,7 @@ const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPl
 
 module.exports = {
     entry: {
-        app: './Demo.jsx',
+        app: './App.jsx',
         vendor: [
             'react',
             'react-dom',
@@ -49,13 +49,13 @@ module.exports = {
             loader: 'babel-loader',
             options:
             {
-                presets:['es2015', 'react'],
-                plugins: ['transform-runtime', 'transform-class-properties'],
-                env: {
-                    development: {
-                        presets: ['react-hmre'],
-                    },
-                },
+                presets: [
+                    '@babel/preset-env',
+                    '@babel/preset-react',
+                ],
+                plugins: [
+                    '@babel/plugin-proposal-class-properties',
+                ],
             },
         },
         {
@@ -90,6 +90,7 @@ module.exports = {
         watchOptions: {
             poll: true,
         },
+        clientLogLevel: 'warning',
     },
     resolve: {
         extensions: ['.js', '.jsx'],

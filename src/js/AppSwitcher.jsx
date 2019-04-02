@@ -1,5 +1,7 @@
 import React from 'react';
-import { arrayOf, bool, func, shape, string } from 'prop-types';
+import {
+    arrayOf, bool, func, shape, string,
+} from 'prop-types';
 
 import AppSummary from './AppSummary';
 
@@ -19,7 +21,7 @@ export default function AppSwitcher({
         secondAppName,
         secondAppDescription,
         secondAppUrl,
-    }, i) => {
+    }) => {
         const secondaryApp = secondAppName && secondAppDescription && secondAppUrl ? (
             <AppSummary
                 appSwitcherOpen={appSwitcherOpen}
@@ -27,12 +29,13 @@ export default function AppSwitcher({
                 description={secondAppDescription}
                 url={secondAppUrl}
                 current={secondAppName === currentAppName}
-            />) : null;
+            />
+        ) : null;
 
         return (
             <div
                 className={`app-group ${appCSSClass}`}
-                key={i}
+                key={appName}
                 role="button"
             >
                 <h3 className="heading">
@@ -101,6 +104,10 @@ export default function AppSwitcher({
         </div>
     );
 }
+
+AppSwitcher.defaultProps = {
+    appConfig: [],
+};
 
 AppSwitcher.propTypes = {
     currentAppName: string.isRequired,

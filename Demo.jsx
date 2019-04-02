@@ -25,11 +25,15 @@ class Demo extends Component {
     }
 
     handleSearchChange(searchValue) {
-        this.setState({ searchValue });
+        this.setState(state => Object.assign({}, state, {
+            searchValue,
+        }));
     }
 
     handleSearchSubmit(selectedValue) {
-        this.setState({ selectedValue });
+        this.setState(state => Object.assign({}, state, {
+            selectedValue,
+        }));
     }
 
     render() {

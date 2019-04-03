@@ -8,7 +8,8 @@
     "start": "node_modules/.bin/webpack-dev-server --mode=development --config webpack.dev.config.js --progress --colors --host 0.0.0.0 --port 7777",
     "lint": "node_modules/.bin/eslint src/js/**",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "postinstall": "npm rebuild node-sass --quiet --force"
+    "postinstall": "npm rebuild node-sass --quiet --force",
+    "cibuild:staging": "node_modules/.bin/webpack --mode=production --config webpack.staging.config.js --colors"
   },
   "repository": {
     "type": "git",

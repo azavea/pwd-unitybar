@@ -1,12 +1,9 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
+
 import React from 'react';
 import { func, string } from 'prop-types';
 
-export default function AppAction({
-    cssClass,
-    title,
-    onClickHandler,
-    icon,
-}) {
+export default function AppAction({ cssClass, title, onClickHandler, icon }) {
     return (
         <a
             className={`link ${cssClass}`}

@@ -16,8 +16,13 @@ const config = {
                 loader: 'babel-loader',
                 exclude: /node_modules/,
                 options: {
-                    plugins: ['transform-runtime'],
-                    presets: ['es2015', 'react'],
+                    presets: [
+                        '@babel/preset-env',
+                        '@babel/preset-react',
+                    ],
+                    plugins: [
+                        '@babel/plugin-proposal-class-properties',
+                    ],
                 },
             },
             {

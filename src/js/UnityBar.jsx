@@ -32,8 +32,12 @@ class UnityBar extends Component {
         };
         this.openAppSwitcher = this.openAppSwitcher.bind(this);
         this.closeAppSwitcher = this.closeAppSwitcher.bind(this);
-        this.openAuthenticatedActions = this.openAuthenticatedActions.bind(this);
-        this.closeAuthenticatedActions = this.closeAuthenticatedActions.bind(this);
+        this.openAuthenticatedActions = this.openAuthenticatedActions.bind(
+            this,
+        );
+        this.closeAuthenticatedActions = this.closeAuthenticatedActions.bind(
+            this,
+        );
         this.contractSearchBox = this.contractSearchBox.bind(this);
         this.expandSearchBox = this.expandSearchBox.bind(this);
         this.closeAllElements = this.closeAllElements.bind(this);
@@ -42,7 +46,8 @@ class UnityBar extends Component {
     }
 
     clearSearchBoxValue() {
-        this.props.searchChangeHandler('');
+        const { searchChangeHandler } = this.props;
+        searchChangeHandler('');
     }
 
     handleClickOutside() {
@@ -50,7 +55,8 @@ class UnityBar extends Component {
     }
 
     handleSearchBoxChange({ target: { value } }) {
-        this.props.searchChangeHandler(value);
+        const { searchChangeHandler } = this.props;
+        searchChangeHandler(value);
     }
 
     closeAllElements() {
@@ -94,7 +100,8 @@ class UnityBar extends Component {
     }
 
     contractSearchBox() {
-        if (!this.props.searchBoxValue) {
+        const { searchBoxValue } = this.props;
+        if (!searchBoxValue) {
             this.setState({ searchBoxExpanded: false });
         }
     }
@@ -132,7 +139,7 @@ class UnityBar extends Component {
             searchBoxExpanded,
         } = this.state;
 
-        const appConfig = pwdAppConfig.map((config) => {
+        const appConfig = pwdAppConfig.map(config => {
             switch (config.appName) {
                 case PARCEL_VIEWER:
                     return Object.assign({}, config, {
@@ -303,6 +310,12 @@ UnityBar.defaultProps = {
     creditsExplorerUrl: '',
     retrofitMapUrl: '',
     retrofitCampaignUrl: '',
+    mapActionHandler: () => null,
+    helpActionHandler: () => null,
+    customActions: [],
+    settingsUrl: '',
+    settingsHandler: () => null,
+    customMenuOptions: [],
 };
 
 export default onClickOutside(UnityBar);

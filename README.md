@@ -45,6 +45,13 @@ Run ESLint by running:
 ./scripts/lint
 ```
 
+### Prettier
+
+This project runs Prettier automatically via Webpack and prettier-loader.
+
+[prettier.io](https://prettier.io/docs/en/editors.html) has some instructions
+for setting up Prettier with a number of editors including Emacs and Vim.
+
 ### Scripts
 
 | Name | Description |

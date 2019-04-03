@@ -4,7 +4,7 @@ const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPl
 
 module.exports = {
     entry: {
-        app: './Demo.jsx',
+        app: './App.jsx',
         vendor: [
             'react',
             'react-dom',
@@ -40,43 +40,61 @@ module.exports = {
             filename: 'index.html',
             template: 'demo.html'
         }),
-        new webpack.HotModuleReplacementPlugin()
+        new webpack.HotModuleReplacementPlugin(),
     ],
     module: {
-        rules: [{
-            test: /\.jsx?$/,
-            exclude: /node_modules/,
-            loader: 'babel-loader',
-            options:
+        rules: [
             {
-                presets:['es2015', 'react'],
-                plugins: ['transform-runtime', 'transform-class-properties'],
-                env: {
-                    development: {
-                        presets: ['react-hmre'],
+                test: /\.jsx?$/,
+                enforce: 'pre',
+                use: [
+                    {
+                        loader: require.resolve('prettier-loader'),
+                        options: {
+                            resolveConfigOptions: {
+                                editorconfig: true,
+                                config: './.prettierrc.json',
+                            },
+                        },
                     },
+                ],
+                exclude: /node_modules/,
+            },
+            {
+                test: /\.jsx?$/,
+                exclude: /node_modules/,
+                loader: 'babel-loader',
+                options:
+                {
+                    presets: [
+                        '@babel/preset-env',
+                        '@babel/preset-react',
+                    ],
+                    plugins: [
+                        '@babel/plugin-proposal-class-properties',
+                    ],
                 },
             },
-        },
-        {
-            test: /\.(css|scss)$/,
-            exclude: /node_modules/,
-            use: [
-                'style-loader',
-                'css-loader',
-                'postcss-loader',
-                'sass-loader',
-            ],
-        },
-        {
-            test: /\.(jpg|gif|png|svg|ttf|eot|woff|woff2)$/,
-            use: 'url-loader',
-        },
-        {
-            test: /\.jsx?/,
-            exclude: [/node_modules/, /\.json$/],
-            loader: 'eslint-loader',
-        }]
+            {
+                test: /\.(css|scss)$/,
+                exclude: /node_modules/,
+                use: [
+                    'style-loader',
+                    'css-loader',
+                    'postcss-loader',
+                    'sass-loader',
+                ],
+            },
+            {
+                test: /\.(jpg|gif|png|svg|ttf|eot|woff|woff2)$/,
+                use: 'url-loader',
+            },
+            {
+                test: /\.jsx?/,
+                exclude: [/node_modules/, /\.json$/],
+                loader: 'eslint-loader',
+            },
+        ]
     },
     devServer: {
         historyApiFallback: {
@@ -90,6 +108,7 @@ module.exports = {
         watchOptions: {
             poll: true,
         },
+        clientLogLevel: 'warning',
     },
     resolve: {
         extensions: ['.js', '.jsx'],

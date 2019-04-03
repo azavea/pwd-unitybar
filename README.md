@@ -2,6 +2,8 @@
 
 [![Build Status](https://travis-ci.org/azavea/pwd-unitybar.svg?branch=develop)](https://travis-ci.org/azavea/pwd-unitybar)
 
+[![Netlify Status](https://api.netlify.com/api/v1/badges/e08902a4-b905-46f4-92be-32149aea344d/deploy-status)](https://app.netlify.com/sites/staging-pwd-unitybar/deploys)
+
 Unified header React component for PWD Stormwater web apps.
 
 ### Requirements

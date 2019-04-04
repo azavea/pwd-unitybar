@@ -8,7 +8,8 @@
     "start": "node_modules/.bin/webpack-dev-server --mode=development --config webpack.dev.config.js --progress --colors --host 0.0.0.0 --port 7777",
     "lint": "node_modules/.bin/eslint src/js/**",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "postinstall": "npm rebuild node-sass --quiet --force"
+    "postinstall": "npm rebuild node-sass --quiet --force",
+    "cibuild:staging": "node_modules/.bin/webpack --mode=production --config webpack.staging.config.js --colors"
   },
   "repository": {
     "type": "git",
@@ -36,6 +37,7 @@
     "@babel/preset-env": "7.4.2",
     "@babel/preset-react": "7.0.0",
     "@babel/runtime-corejs2": "7.4.2",
+    "@material-ui/core": "3.9.3",
     "autoprefixer": "8.2.0",
     "babel-eslint": "10.0.1",
     "babel-loader": "8.0.5",

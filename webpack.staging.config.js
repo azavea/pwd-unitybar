@@ -1,6 +1,6 @@
+const path = require('path');
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 
 module.exports = {
     entry: {
@@ -11,19 +11,13 @@ module.exports = {
         ]
     },
     output: {
-        path: __dirname,
+        path: path.join(__dirname, 'staging'),
         filename: "pwd.unitybar.[hash].js"
     },
     plugins: [
-        new BundleAnalyzerPlugin({
-            analyzerMode: 'server',
-            analyzerHost: '0.0.0.0',
-            analyzerPort: 7778,
-            openAnalyzer: false,
-        }),
         new webpack.DefinePlugin({
             'process.env': {
-                'NODE_ENV': JSON.stringify('development'),
+                'NODE_ENV': JSON.stringify('staging'),
             },
         }),
         new webpack.LoaderOptionsPlugin({
@@ -41,26 +35,9 @@ module.exports = {
             filename: 'index.html',
             template: 'demo.html'
         }),
-        new webpack.HotModuleReplacementPlugin(),
     ],
     module: {
         rules: [
-            {
-                test: /\.jsx?$/,
-                enforce: 'pre',
-                use: [
-                    {
-                        loader: require.resolve('prettier-loader'),
-                        options: {
-                            resolveConfigOptions: {
-                                editorconfig: true,
-                                config: './.prettierrc.json',
-                            },
-                        },
-                    },
-                ],
-                exclude: /node_modules/,
-            },
             {
                 test: /\.jsx?$/,
                 exclude: /node_modules/,
@@ -96,20 +73,6 @@ module.exports = {
                 loader: 'eslint-loader',
             },
         ]
-    },
-    devServer: {
-        historyApiFallback: {
-            index: '/',
-            host: '0.0.0.0',
-        },
-        disableHostCheck: true,
-        hot: true,
-        overlay: true,
-        stats: 'minimal',
-        watchOptions: {
-            poll: true,
-        },
-        clientLogLevel: 'warning',
     },
     resolve: {
         extensions: ['.js', '.jsx'],

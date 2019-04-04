@@ -19,6 +19,7 @@ module.exports = {
             analyzerMode: 'server',
             analyzerHost: '0.0.0.0',
             analyzerPort: 7778,
+            openAnalyzer: false,
         }),
         new webpack.DefinePlugin({
             'process.env': {

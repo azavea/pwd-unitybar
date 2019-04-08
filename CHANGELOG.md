@@ -1,3 +1,7 @@
+## 1.0.1
+
+- Configure imports to work with AMD or CommonJS
+
 ## 1.0.0
 
 - Update React, Webpack, and Babel

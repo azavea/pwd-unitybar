@@ -17,12 +17,14 @@
 
     > .link {
         @include delinkify;
+        @include debuttonify;
         display: flex;
         flex: none;
         flex-flow: row nowrap;
         align-items: center;
         justify-content: center;
         width: $pwdub-app-switcher-gutter;
+        cursor: pointer;
 
         &:hover {
             background-color: $pwdub-action-hover-background-color;

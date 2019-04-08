@@ -70,7 +70,13 @@
 
         > .listitem > .link {
             @include delinkify($pwdub-white);
+            @include debuttonify;
             cursor: pointer;
+            white-space: nowrap;
+            color: $pwdub-white;
+            font-size: 14px;
+            font-weight: bold;
+            text-transform: uppercase;
         }
     }
 }

@@ -1,83 +1,202 @@
 import React, { Component } from 'react';
-import { render } from 'react-dom';
+import { hot } from 'react-hot-loader/root';
 
 import UnityBar from './src/js/UnityBar';
+import DemoToggles from './DemoToggles';
+
+const accessEnum = Object.freeze({
+    public: 'public',
+    internal: 'internal',
+});
+
+const themeEnum = Object.freeze({
+    blue: 'blue',
+    white: 'white',
+});
 
 class Demo extends Component {
-    constructor(props) {
-        super(props);
+    state = {
+        currentAppName: 'PWD UnityBar',
+        searchValue: '',
+        selectedValue: '',
+        theme: 'blue',
+        access: 'public',
+        hasLogo: true,
+        authenticated: false,
+        hasSearch: true,
+        hasMapAction: false,
+        hasHelpAction: false,
+        hasSettings: false,
+        parcelViewerUrl: 'http://www.phila.gov/water/swmap/',
+        creditsExplorerUrl: 'http://water.phila.gov/swexp/',
+        retrofitMapUrl: 'https://www.azavea.com',
+        retrofitCampaignUrl: 'https://www.azavea.com',
+    };
 
-        this.state = {
-            searchValue: '',
-            selectedValue: '',
-        };
-
-        this.clearSearchBoxValue = this.clearSearchBoxValue.bind(this);
-        this.handleSearchChange = this.handleSearchChange.bind(this);
-        this.handleSearchSubmit = this.handleSearchSubmit.bind(this);
-    }
-
-    clearSearchBoxValue() {
+    clearSearchBoxValue = () =>
         this.setState({
             searchValue: '',
             selectedValue: '',
         });
-    }
 
-    handleSearchChange(searchValue) {
-        this.setState({ searchValue });
-    }
+    handleToggleHasSearch = () =>
+        this.setState(state =>
+            Object.assign({}, state, {
+                hasSearch: !state.hasSearch,
+            }),
+        );
 
-    handleSearchSubmit(selectedValue) {
-        this.setState({ selectedValue });
-    }
+    handleSearchChange = searchValue =>
+        this.setState(state =>
+            Object.assign({}, state, {
+                searchValue,
+            }),
+        );
+
+    handleSearchSubmit = selectedValue =>
+        this.setState(state =>
+            Object.assign({}, state, {
+                selectedValue,
+            }),
+        );
+
+    handleChangeAppName = currentAppName =>
+        this.setState(state =>
+            Object.assign({}, state, {
+                currentAppName,
+            }),
+        );
+
+    handleToggleHasLogo = () =>
+        this.setState(state =>
+            Object.assign({}, state, {
+                hasLogo: !state.hasLogo,
+            }),
+        );
+
+    handleToggleAccess = () =>
+        this.setState(state =>
+            Object.assign({}, state, {
+                access:
+                    state.access === accessEnum.public
+                        ? accessEnum.internal
+                        : accessEnum.public,
+            }),
+        );
+
+    handleToggleTheme = () =>
+        this.setState(state =>
+            Object.assign({}, state, {
+                theme:
+                    state.theme === themeEnum.blue
+                        ? themeEnum.white
+                        : themeEnum.blue,
+            }),
+        );
+
+    handleToggleHasMapAction = () =>
+        this.setState(state =>
+            Object.assign({}, state, {
+                hasMapAction: !state.hasMapAction,
+            }),
+        );
+
+    handleToggleHasHelpAction = () =>
+        this.setState(state =>
+            Object.assign({}, state, {
+                hasHelpAction: !state.hasHelpAction,
+            }),
+        );
+
+    handleToggleHasSettings = () =>
+        this.setState(state =>
+            Object.assign({}, state, {
+                hasSettings: !state.hasSettings,
+            }),
+        );
+
+    handleToggleAuthenticated = () =>
+        this.setState(state =>
+            Object.assign({}, state, {
+                authenticated: !state.authenticated,
+            }),
+        );
 
     render() {
         const {
+            currentAppName,
+            hasLogo,
+            theme,
+            access,
+            hasSearch,
             searchValue,
             selectedValue,
+            authenticated,
+            hasMapAction,
+            hasHelpAction,
+            hasSettings,
+            parcelViewerUrl,
+            creditsExplorerUrl,
+            retrofitMapUrl,
+            retrofitCampaignUrl,
         } = this.state;
 
         return (
             <div>
                 <UnityBar
-                    currentAppName="PWD UnityBar"
-                    authenticated
-                    hasMapAction
-                    mapActionHandler={() => { window.console.log('map action clicked'); }}
-                    hasHelpAction
-                    helpActionHandler={() => { window.console.log('help action clicked'); }}
-                    hasSettings
-                    settingsHandler={() => { window.console.log('settings action clicked'); }}
+                    currentAppName={currentAppName}
+                    hasLogo={hasLogo}
+                    theme={theme}
+                    authenticated={authenticated}
+                    access={access}
+                    hasMapAction={hasMapAction}
+                    mapActionHandler={() => {
+                        window.console.log('map action clicked');
+                    }}
+                    hasHelpAction={hasHelpAction}
+                    helpActionHandler={() => {
+                        window.console.log('help action clicked');
+                    }}
+                    hasSettings={hasSettings}
+                    settingsHandler={() => {
+                        window.console.log('settings action clicked');
+                    }}
                     searchChangeHandler={this.handleSearchChange}
                     searchSubmitHandler={this.handleSearchSubmit}
+                    hasSearch={hasSearch}
                     searchBoxValue={searchValue}
-                    parcelViewerUrl="http://www.phila.gov/water/swmap/"
-                    creditsExplorerUrl="http://water.phila.gov/swexp/"
-                    retrofitMapUrl="https://www.azavea.com"
-                    retrofitCampaignUrl="https://www.azavea.com"
+                    parcelViewerUrl={parcelViewerUrl}
+                    creditsExplorerUrl={creditsExplorerUrl}
+                    retrofitMapUrl={retrofitMapUrl}
+                    retrofitCampaignUrl={retrofitCampaignUrl}
                 />
-                <div id="output-region">
-                    <div>
-                        <p>
-                            Search term: {searchValue}
-                        </p>
-                    </div>
-                    <div>
-                        <p>
-                            Search selection: {selectedValue}
-                        </p>
-                    </div>
-                    <button onClick={this.clearSearchBoxValue}>
-                        Clear search box
-                    </button>
-                </div>
+                <DemoToggles
+                    hasSearch={hasSearch}
+                    searchValue={searchValue}
+                    selectedValue={selectedValue}
+                    clearSearchBoxValue={this.clearSearchBoxValue}
+                    currentAppName={currentAppName}
+                    hasLogo={hasLogo}
+                    theme={theme}
+                    access={access}
+                    authenticated={authenticated}
+                    hasMapAction={hasMapAction}
+                    hasHelpAction={hasHelpAction}
+                    hasSettings={hasSettings}
+                    changeAppName={this.handleChangeAppName}
+                    toggleHasLogo={this.handleToggleHasLogo}
+                    toggleAccess={this.handleToggleAccess}
+                    toggleTheme={this.handleToggleTheme}
+                    toggleHasMapAction={this.handleToggleHasMapAction}
+                    toggleHasHelpAction={this.handleToggleHasHelpAction}
+                    toggleHasSettings={this.handleToggleHasSettings}
+                    toggleAuthenticated={this.handleToggleAuthenticated}
+                    changeSearchValue={this.handleSearchChange}
+                    toggleHasSearch={this.handleToggleHasSearch}
+                />
             </div>
         );
     }
 }
 
-render(
-    <Demo />,
-    document.getElementById('root'),
-);
+export default hot(Demo);

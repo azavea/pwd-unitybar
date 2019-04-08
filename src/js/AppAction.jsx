@@ -1,24 +1,20 @@
 import React from 'react';
 import { func, string } from 'prop-types';
 
-export default function AppAction({
-    cssClass,
-    title,
-    onClickHandler,
-    icon,
-}) {
+export default function AppAction({ cssClass, title, onClickHandler, icon }) {
     return (
-        <a
-            className={`link ${cssClass}`}
+        <button
+            className={`link ${cssClass} toggle`}
             title={title}
             href=""
             aria-label={title}
             onClick={onClickHandler}
+            type="button"
         >
             <svg className="icon">
                 <use xlinkHref={icon} />
             </svg>
-        </a>
+        </button>
     );
 }
 

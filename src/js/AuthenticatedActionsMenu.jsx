@@ -1,6 +1,3 @@
-/* eslint-disable jsx-a11y/anchor-is-valid */
-/* eslint-disable jsx-a11y/click-events-have-key-events */
-/* eslint-disable jsx-a11y/no-static-element-interactions */
 import React from 'react';
 import { arrayOf, bool, func, string } from 'prop-types';
 
@@ -24,14 +21,15 @@ export default function AuthenticatedActionsMenu({
         }
 
         const settingsElement = (
-            <a
+            <button
                 className="link"
                 tabIndex={tabIndex}
                 href={settingsHandler ? null : settingsUrl}
                 onClick={settingsHandler || null}
+                type="button"
             >
                 Settings
-            </a>
+            </button>
         );
 
         return (
@@ -48,13 +46,14 @@ export default function AuthenticatedActionsMenu({
                   role="menuitem"
                   key={name + onClickHandler.toString()}
               >
-                  <a
+                  <button
                       className="link"
                       tabIndex={tabIndex}
                       onClick={onClickHandler}
+                      type="button"
                   >
                       {name}
-                  </a>
+                  </button>
               </li>
           ))
         : null;
@@ -87,13 +86,14 @@ export default function AuthenticatedActionsMenu({
                 {customMenuItems}
                 {settingsMenuItem}
                 <li className="listitem" role="menuitem">
-                    <a
+                    <button
                         className="link"
                         tabIndex={tabIndex}
                         onClick={signOutHandler || null}
+                        type="button"
                     >
                         Sign out
-                    </a>
+                    </button>
                 </li>
             </ul>
         </div>

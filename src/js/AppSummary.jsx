@@ -1,5 +1,3 @@
-/* eslint-disable jsx-a11y/aria-props */
-
 import React from 'react';
 import { bool, string } from 'prop-types';
 

@@ -7,7 +7,7 @@ const outputPath = path.join(__dirname, 'dist');
 
 const config = {
     entry: {
-        app: './src/js/UnityBar.jsx',
+        app: './src/js/index.js',
     },
     module: {
         rules: [

@@ -1,3 +1,10 @@
+## 1.0.0
+
+- Update React, Webpack, and Babel
+- Add Prettier
+- Upgrade ESLint rules
+- Fix accessibilty issues identified by the eslint-jsx-a11y linter
+
 ## 0.1.10
 
 - Declare React & React-DOM as peer dependencies

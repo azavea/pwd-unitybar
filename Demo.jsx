@@ -18,6 +18,7 @@ class Demo extends Component {
     state = {
         currentAppName: 'PWD UnityBar',
         searchValue: '',
+        isSearching: false,
         selectedValue: '',
         theme: 'blue',
         access: 'public',
@@ -60,6 +61,13 @@ class Demo extends Component {
                     selectedValue,
                 }),
             () => window.console.log(`${selectedValue} was submitted`),
+        );
+
+    handleToggleIsSearching = () =>
+        this.setState(state =>
+            Object.assign({}, state, {
+                isSearching: !state.isSearching,
+            }),
         );
 
     handleChangeAppName = currentAppName =>
@@ -141,7 +149,18 @@ class Demo extends Component {
             creditsExplorerUrl,
             retrofitMapUrl,
             retrofitCampaignUrl,
+            isSearching,
         } = this.state;
+
+        const searchingElement = (
+            <span
+                role="img"
+                className="icon"
+                aria-label="hourglass image for loading indicator"
+            >
+                ⌛
+            </span>
+        );
 
         return (
             <div>
@@ -171,6 +190,8 @@ class Demo extends Component {
                     creditsExplorerUrl={creditsExplorerUrl}
                     retrofitMapUrl={retrofitMapUrl}
                     retrofitCampaignUrl={retrofitCampaignUrl}
+                    isSearching={isSearching}
+                    searchingIndicator={searchingElement}
                 />
                 <DemoToggles
                     hasSearch={hasSearch}
@@ -195,6 +216,8 @@ class Demo extends Component {
                     toggleAuthenticated={this.handleToggleAuthenticated}
                     changeSearchValue={this.handleSearchChange}
                     toggleHasSearch={this.handleToggleHasSearch}
+                    isSearching={isSearching}
+                    toggleIsSearching={this.handleToggleIsSearching}
                 />
             </div>
         );

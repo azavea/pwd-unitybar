@@ -129,6 +129,8 @@ following props:
 | searchChangeHandler | function | Function to handle changes to the search bar input | `console.log` |
 | searchSubmitHandler | function | Function to handle search bar input submission | `console.log` |
 | searchBoxValue | string | Current [controlled input](https://reactjs.org/docs/forms.html#controlled-components) value | `""` |
+| isSearching | bool | Disable the search input field and button while fetching | `false` |
+| searchingIndicator | node | React component to use as a loading indicator while isSearching is true | `null` |
 | hasMapAction | bool | Display the map action button | `true` |
 | hasHelpAction | bool | Display the help action button | `true` |
 | helpActionHandler | function | Function to handle clicks on the help action button | `null` |

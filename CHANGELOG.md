@@ -1,3 +1,8 @@
+## 1.0.3
+
+- Add `isSearching` and `searchingIndicator` props to enable applications to set
+the state of the search box during fetches programmatically
+
 ## 1.0.2
 
 - Adjust search input Enter key press handling to ensure search submit handler

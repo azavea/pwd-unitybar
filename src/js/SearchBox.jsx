@@ -1,5 +1,5 @@
 import React from 'react';
-import { string, func } from 'prop-types';
+import { bool, node, string, func } from 'prop-types';
 
 const searchBoxRole = 'searchbox';
 
@@ -10,6 +10,8 @@ export default function SearchBox({
     contractSearchBox,
     searchBoxValue,
     handleSearchBoxChange,
+    isSearching,
+    searchingIndicator,
 }) {
     const tabIndex = searchBoxValue ? '0' : '-1';
 
@@ -21,11 +23,27 @@ export default function SearchBox({
         return null;
     };
 
-    return (
-        <div className="search-form" role="search">
+    const searchIcon = (() => {
+        const searchSVG = (
             <svg className="icon" aria-hidden="true">
                 <use xlinkHref="#pwdub-icon-search" />
             </svg>
+        );
+
+        if (!isSearching) {
+            return searchSVG;
+        }
+
+        if (!searchingIndicator) {
+            return searchSVG;
+        }
+
+        return searchingIndicator;
+    })();
+
+    return (
+        <div className="search-form" role="search">
+            {searchIcon}
             <input
                 className="field"
                 type="search"
@@ -38,6 +56,7 @@ export default function SearchBox({
                 onBlur={contractSearchBox}
                 onChange={handleSearchBoxChange}
                 onKeyPress={callSubmitActionOnEnterKeyPress}
+                disabled={isSearching}
             />
             <button
                 onClick={searchSubmitHandler}
@@ -45,12 +64,17 @@ export default function SearchBox({
                 type="button"
                 name="search-btn"
                 tabIndex={tabIndex}
+                disabled={isSearching}
             >
                 Search
             </button>
         </div>
     );
 }
+
+SearchBox.defaultProps = {
+    searchingIndicator: null,
+};
 
 SearchBox.propTypes = {
     searchPlaceholder: string.isRequired,
@@ -59,4 +83,6 @@ SearchBox.propTypes = {
     contractSearchBox: func.isRequired,
     searchBoxValue: string.isRequired,
     handleSearchBoxChange: func.isRequired,
+    isSearching: bool.isRequired,
+    searchingIndicator: node,
 };

@@ -1,3 +1,9 @@
+## 1.0.2
+
+- Adjust search input Enter key press handling to ensure search submit handler
+gets called on Enter key presses
+- Add default `color` property to the search input style rules
+
 ## 1.0.1
 
 - Configure imports to work with AMD or CommonJS

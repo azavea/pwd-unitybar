@@ -13,10 +13,12 @@ export default function SearchBox({
 }) {
     const tabIndex = searchBoxValue ? '0' : '-1';
 
-    const checkReturnKeyPress = ({ keyCode }) => {
-        if (keyCode === 13) {
-            searchSubmitHandler();
+    const callSubmitActionOnEnterKeyPress = ({ key }) => {
+        if (key === 'Enter') {
+            return searchSubmitHandler();
         }
+
+        return null;
     };
 
     return (
@@ -35,7 +37,7 @@ export default function SearchBox({
                 onFocus={expandSearchBox}
                 onBlur={contractSearchBox}
                 onChange={handleSearchBoxChange}
-                onKeyDown={checkReturnKeyPress}
+                onKeyPress={callSubmitActionOnEnterKeyPress}
             />
             <button
                 onClick={searchSubmitHandler}

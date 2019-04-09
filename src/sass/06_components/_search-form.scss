@@ -42,6 +42,7 @@
         background-color: $pwdub-white;
         font: inherit;
         font-size: 15px;
+        color: $pwdub-black;
 
         @include mobile {
             @include invisible;

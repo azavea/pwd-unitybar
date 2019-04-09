@@ -31,7 +31,7 @@ const TEXT_INPUT = 'TEXT_INPUT';
 
 function PropsRow({ label, value, inputType, changeHandler, switchCondition }) {
     return (
-        <TableRow>
+        <TableRow key={label}>
             <TableCell>
                 <code>{label}</code>
             </TableCell>

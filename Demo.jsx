@@ -54,10 +54,12 @@ class Demo extends Component {
         );
 
     handleSearchSubmit = selectedValue =>
-        this.setState(state =>
-            Object.assign({}, state, {
-                selectedValue,
-            }),
+        this.setState(
+            state =>
+                Object.assign({}, state, {
+                    selectedValue,
+                }),
+            () => window.console.log(`${selectedValue} was submitted`),
         );
 
     handleChangeAppName = currentAppName =>

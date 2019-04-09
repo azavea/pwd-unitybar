@@ -92,6 +92,8 @@ export default function DemoToggles({
     changeSearchValue,
     hasSearch,
     toggleHasSearch,
+    isSearching,
+    toggleIsSearching,
 }) {
     const propsData = [
         {
@@ -156,6 +158,12 @@ export default function DemoToggles({
             inputType: TEXT_INPUT,
             changeHandler: changeSearchValue,
         },
+        {
+            label: 'isSearching',
+            value: isSearching,
+            inputType: SWITCH_INPUT,
+            changeHandler: toggleIsSearching,
+        },
     ];
 
     return (
@@ -201,4 +209,6 @@ DemoToggles.propTypes = {
     changeSearchValue: func.isRequired,
     hasSearch: bool.isRequired,
     toggleHasSearch: func.isRequired,
+    isSearching: bool.isRequired,
+    toggleIsSearching: func.isRequired,
 };

@@ -1,5 +1,5 @@
 import React from 'react';
-import { arrayOf, bool, func, string } from 'prop-types';
+import { arrayOf, bool, func, node, string } from 'prop-types';
 
 import { customActionPropType, customMenuOptionPropType } from './constants';
 
@@ -28,6 +28,8 @@ export default function AppActions({
     hasSearch,
     searchPlaceholder,
     searchSubmitHandler,
+    isSearching,
+    searchingIndicator,
     hasMapAction,
     mapActionHandler,
     hasHelpAction,
@@ -108,6 +110,8 @@ export default function AppActions({
             contractSearchBox={contractSearchBox}
             searchBoxValue={searchBoxValue}
             handleSearchBoxChange={handleSearchBoxChange}
+            isSearching={isSearching}
+            searchingIndicator={searchingIndicator}
         />
     ) : null;
 
@@ -147,6 +151,8 @@ AppActions.defaultProps = {
     closeAuthenticatedActions: () => null,
     hasSearch: false,
     searchPlaceholder: '',
+    isSearching: false,
+    searchingIndicator: null,
     hasMapAction: false,
     mapActionHandler: () => null,
     hasHelpAction: false,
@@ -171,6 +177,8 @@ AppActions.propTypes = {
     hasSearch: bool,
     searchPlaceholder: string,
     searchSubmitHandler: func.isRequired,
+    isSearching: bool,
+    searchingIndicator: node,
     hasMapAction: bool,
     mapActionHandler: func,
     hasHelpAction: bool,

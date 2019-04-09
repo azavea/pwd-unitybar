@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { arrayOf, bool, func, string } from 'prop-types';
+import { arrayOf, bool, func, node, string } from 'prop-types';
 import onClickOutside from 'react-onclickoutside';
 
 import {
@@ -116,6 +116,8 @@ class UnityBar extends Component {
             searchPlaceholder,
             searchSubmitHandler,
             searchBoxValue,
+            isSearching,
+            searchingIndicator,
             hasMapAction,
             mapActionHandler,
             hasHelpAction,
@@ -230,6 +232,8 @@ class UnityBar extends Component {
                     hasSearch={hasSearch}
                     searchPlaceholder={searchPlaceholder}
                     searchSubmitHandler={wrappedSearchSubmitHandler}
+                    isSearching={isSearching}
+                    searchingIndicator={searchingIndicator}
                     hasMapAction={hasMapAction}
                     mapActionHandler={wrappedMapActionHandler}
                     hasHelpAction={hasHelpAction}
@@ -263,6 +267,8 @@ UnityBar.propTypes = {
     searchChangeHandler: func,
     searchSubmitHandler: func,
     searchBoxValue: string,
+    isSearching: bool,
+    searchingIndicator: node,
     hasMapAction: bool,
     mapActionHandler: func,
     hasHelpAction: bool,
@@ -297,6 +303,8 @@ UnityBar.defaultProps = {
         }
     },
     searchBoxValue: '',
+    isSearching: false,
+    searchingIndicator: null,
     hasMapAction: true,
     hasHelpAction: true,
     authenticated: false,

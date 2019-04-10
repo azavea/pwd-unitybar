@@ -5,6 +5,7 @@ import AppSummary from './AppSummary';
 
 export default function AppSwitcher({
     currentAppName,
+    appNameClickHandler,
     appSwitcherOpen,
     openAppSwitcher,
     closeAppSwitcher,
@@ -55,9 +56,23 @@ export default function AppSwitcher({
     const appSwitcherOpenCSSClass = appSwitcherOpen ? '-on' : '';
     const tabIndex = appSwitcherOpen ? '0' : '-1';
 
+    const appNameHeader = appNameClickHandler ? (
+        <button
+            className="appname"
+            type="button"
+            title={currentAppName}
+            aria-label={currentAppName}
+            onClick={appNameClickHandler}
+            style={{ cursor: 'pointer' }}
+        >
+            {currentAppName}
+        </button>
+    ) : (
+        <h1 className="appname">{currentAppName}</h1>
+    );
+
     return (
         <div className={`app-switcher ${appSwitcherOpenCSSClass}`}>
-            <h1 className="appname">{currentAppName}</h1>
             <button
                 className="toggle"
                 type="button"
@@ -73,6 +88,7 @@ export default function AppSwitcher({
                     <use xlinkHref="#pwdub-icon-back" />
                 </svg>
             </button>
+            {appNameHeader}
             <div className="app-switcher-menu" aria-hidden="true">
                 <header className="menu-header">
                     <h2 className="heading">Stormwater Management Apps</h2>
@@ -96,10 +112,12 @@ export default function AppSwitcher({
 
 AppSwitcher.defaultProps = {
     appConfig: [],
+    appNameClickHandler: null,
 };
 
 AppSwitcher.propTypes = {
     currentAppName: string.isRequired,
+    appNameClickHandler: func,
     appSwitcherOpen: bool.isRequired,
     openAppSwitcher: func.isRequired,
     closeAppSwitcher: func.isRequired,

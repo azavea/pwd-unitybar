@@ -1,3 +1,9 @@
+## 1.0.4
+
+- Enable host application to pass in a `appNameClickHandler` function which will
+be make the app name into a clickable button, defaulting back to an `h1` header
+when no `appNameClickHandler` is passed in
+
 ## 1.0.3
 
 - Add `isSearching` and `searchingIndicator` props to enable applications to set

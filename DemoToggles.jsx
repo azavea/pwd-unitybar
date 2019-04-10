@@ -28,6 +28,7 @@ const demoTogglesStyles = Object.freeze({
 
 const SWITCH_INPUT = 'SWITCH_INPUT';
 const TEXT_INPUT = 'TEXT_INPUT';
+const APP_NAME_CLICK_HANDLER = 'appNameClickHandler';
 
 function PropsRow({ label, value, inputType, changeHandler, switchCondition }) {
     return (
@@ -36,7 +37,11 @@ function PropsRow({ label, value, inputType, changeHandler, switchCondition }) {
                 <code>{label}</code>
             </TableCell>
             <TableCell>
-                <code>{value.toString()}</code>
+                <code>
+                    {label !== APP_NAME_CLICK_HANDLER
+                        ? value.toString()
+                        : (value && 'Function') || 'null'}
+                </code>
             </TableCell>
             <TableCell>
                 {inputType === SWITCH_INPUT ? (
@@ -84,6 +89,8 @@ export default function DemoToggles({
     toggleHasHelpAction,
     currentAppName,
     changeAppName,
+    hasAppNameClickHandler,
+    toggleHasAppNameClickHandler,
     access,
     toggleAccess,
     authenticated,
@@ -101,6 +108,12 @@ export default function DemoToggles({
             value: currentAppName,
             inputType: TEXT_INPUT,
             changeHandler: changeAppName,
+        },
+        {
+            label: APP_NAME_CLICK_HANDLER,
+            value: hasAppNameClickHandler,
+            inputType: SWITCH_INPUT,
+            changeHandler: toggleHasAppNameClickHandler,
         },
         {
             label: 'hasLogo',
@@ -191,6 +204,8 @@ export default function DemoToggles({
 DemoToggles.propTypes = {
     currentAppName: string.isRequired,
     changeAppName: func.isRequired,
+    hasAppNameClickHandler: bool.isRequired,
+    toggleHasAppNameClickHandler: func.isRequired,
     hasLogo: bool.isRequired,
     toggleHasLogo: func.isRequired,
     theme: oneOf(['blue', 'white']).isRequired,

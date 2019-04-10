@@ -121,6 +121,7 @@ following props:
 | name | type | description | default |
 | --- | --- | --- | --- |
 | currentAppName | string | The name of the current app | `null` (required) |
+| appNameClickHandler | function | An optional function to call on clicking the app name. Makes the app name into a button | `null` |
 | theme | string | UnityBar theme (`"blue"`, `"white"`, or `"custom"`) | `"blue"` |
 | access | string | Access level (`"public"` or `"internal"`) | `"public"` |
 | hasLogo | bool | Display the PWD logo | `true` |

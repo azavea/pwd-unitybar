@@ -43,6 +43,7 @@ class UnityBar extends Component {
         this.closeAllElements = this.closeAllElements.bind(this);
         this.handleSearchBoxChange = this.handleSearchBoxChange.bind(this);
         this.clearSearchBoxValue = this.clearSearchBoxValue.bind(this);
+        this.handleAppNameClick = this.handleAppNameClick.bind(this);
     }
 
     clearSearchBoxValue() {
@@ -106,9 +107,24 @@ class UnityBar extends Component {
         }
     }
 
+    handleAppNameClick() {
+        const { appNameClickHandler } = this.props;
+
+        return this.setState(
+            state =>
+                Object.assign({}, state, {
+                    appSwitcherOpen: false,
+                    authenticatedActionsOpen: false,
+                    searchBoxExpanded: false,
+                }),
+            appNameClickHandler,
+        );
+    }
+
     render() {
         const {
             currentAppName,
+            appNameClickHandler,
             theme,
             access,
             hasLogo,
@@ -221,6 +237,9 @@ class UnityBar extends Component {
                     openAppSwitcher={this.openAppSwitcher}
                     closeAppSwitcher={this.closeAppSwitcher}
                     currentAppName={currentAppName}
+                    appNameClickHandler={
+                        appNameClickHandler ? this.handleAppNameClick : null
+                    }
                     appConfig={appConfig}
                 />
                 {pwdLogo}
@@ -259,6 +278,7 @@ class UnityBar extends Component {
 
 UnityBar.propTypes = {
     currentAppName: string.isRequired,
+    appNameClickHandler: func,
     theme: string,
     access: accessPropType,
     hasLogo: bool,
@@ -287,6 +307,7 @@ UnityBar.propTypes = {
 };
 
 UnityBar.defaultProps = {
+    appNameClickHandler: null,
     theme: 'blue',
     access: 'public',
     hasLogo: true,

@@ -32,6 +32,7 @@ class Demo extends Component {
         creditsExplorerUrl: 'http://water.phila.gov/swexp/',
         retrofitMapUrl: 'https://www.azavea.com',
         retrofitCampaignUrl: 'https://www.azavea.com',
+        hasAppNameClickHandler: false,
     };
 
     clearSearchBoxValue = () =>
@@ -132,9 +133,19 @@ class Demo extends Component {
             }),
         );
 
+    handleAppNameClick = () => window.console.log('App name was clicked!');
+
+    handleToggleHasAppNameClickHandler = () =>
+        this.setState(state =>
+            Object.assign({}, state, {
+                hasAppNameClickHandler: !state.hasAppNameClickHandler,
+            }),
+        );
+
     render() {
         const {
             currentAppName,
+            hasAppNameClickHandler,
             hasLogo,
             theme,
             access,
@@ -166,6 +177,9 @@ class Demo extends Component {
             <div>
                 <UnityBar
                     currentAppName={currentAppName}
+                    appNameClickHandler={
+                        hasAppNameClickHandler ? this.handleAppNameClick : null
+                    }
                     hasLogo={hasLogo}
                     theme={theme}
                     authenticated={authenticated}
@@ -199,6 +213,10 @@ class Demo extends Component {
                     selectedValue={selectedValue}
                     clearSearchBoxValue={this.clearSearchBoxValue}
                     currentAppName={currentAppName}
+                    hasAppNameClickHandler={hasAppNameClickHandler}
+                    toggleHasAppNameClickHandler={
+                        this.handleToggleHasAppNameClickHandler
+                    }
                     hasLogo={hasLogo}
                     theme={theme}
                     access={access}

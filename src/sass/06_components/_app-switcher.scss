@@ -6,7 +6,7 @@
     justify-content: flex-start;
 
     > .appname {
-        order: 1;
+        @include debuttonify;
         font-size: 16px;
         font-weight: bold;
         line-height: 1.2;

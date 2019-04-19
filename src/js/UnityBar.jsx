@@ -136,8 +136,10 @@ class UnityBar extends Component {
             searchingIndicator,
             hasMapAction,
             mapActionHandler,
+            mapActionTitle,
             hasHelpAction,
             helpActionHandler,
+            helpActionTitle,
             customActions,
             authenticated,
             hasSettings,
@@ -255,8 +257,10 @@ class UnityBar extends Component {
                     searchingIndicator={searchingIndicator}
                     hasMapAction={hasMapAction}
                     mapActionHandler={wrappedMapActionHandler}
+                    mapActionTitle={mapActionTitle}
                     hasHelpAction={hasHelpAction}
                     helpActionHandler={wrappedHelpActionHandler}
+                    helpActionTitle={helpActionTitle}
                     customActions={customActions}
                     hasSettings={hasSettings}
                     settingsUrl={settingsUrl}
@@ -291,8 +295,10 @@ UnityBar.propTypes = {
     searchingIndicator: node,
     hasMapAction: bool,
     mapActionHandler: func,
+    mapActionTitle: string,
     hasHelpAction: bool,
     helpActionHandler: func,
+    helpActionTitle: string,
     customActions: arrayOf(customActionPropType),
     authenticated: bool,
     hasSettings: bool,
@@ -327,7 +333,9 @@ UnityBar.defaultProps = {
     isSearching: false,
     searchingIndicator: null,
     hasMapAction: true,
+    mapActionTitle: 'Map',
     hasHelpAction: true,
+    helpActionTitle: 'Help',
     authenticated: false,
     hasSettings: false,
     signOutHandler() {

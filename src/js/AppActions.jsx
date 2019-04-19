@@ -32,8 +32,10 @@ export default function AppActions({
     searchingIndicator,
     hasMapAction,
     mapActionHandler,
+    mapActionTitle,
     hasHelpAction,
     helpActionHandler,
+    helpActionTitle,
     customActions,
     hasSettings,
     settingsUrl,
@@ -85,7 +87,7 @@ export default function AppActions({
         hasMapAction && mapActionHandler && !searchBoxValue ? (
             <AppAction
                 cssClass={defaultAppActions.map.cssClass}
-                title={defaultAppActions.map.title}
+                title={mapActionTitle}
                 icon={defaultAppActions.map.icon}
                 onClickHandler={mapActionHandler}
             />
@@ -95,7 +97,7 @@ export default function AppActions({
         hasHelpAction && helpActionHandler && !searchBoxValue ? (
             <AppAction
                 cssClass={defaultAppActions.help.cssClass}
-                title={defaultAppActions.help.title}
+                title={helpActionTitle}
                 icon={defaultAppActions.help.icon}
                 onClickHandler={helpActionHandler}
                 closeAllElements={closeAllElements}
@@ -155,8 +157,10 @@ AppActions.defaultProps = {
     searchingIndicator: null,
     hasMapAction: false,
     mapActionHandler: () => null,
+    mapActionTitle: 'Map',
     hasHelpAction: false,
     helpActionHandler: () => null,
+    helpActionTitle: 'Help',
     customActions: null,
     hasSettings: false,
     settingsUrl: '',
@@ -181,8 +185,10 @@ AppActions.propTypes = {
     searchingIndicator: node,
     hasMapAction: bool,
     mapActionHandler: func,
+    mapActionTitle: string,
     hasHelpAction: bool,
     helpActionHandler: func,
+    helpActionTitle: string,
     customActions: arrayOf(customActionPropType),
     hasSettings: bool,
     settingsUrl: string,

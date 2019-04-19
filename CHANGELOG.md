@@ -1,3 +1,8 @@
+## 1.0.5
+
+- Enable host application to set map and help button titles via
+`mapActionTitle` and `helpActionTitle` props, respectively.
+
 ## 1.0.4
 
 - Enable host application to pass in a `appNameClickHandler` function which will

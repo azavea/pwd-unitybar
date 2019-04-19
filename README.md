@@ -133,8 +133,11 @@ following props:
 | isSearching | bool | Disable the search input field and button while fetching | `false` |
 | searchingIndicator | node | React component to use as a loading indicator while isSearching is true | `null` |
 | hasMapAction | bool | Display the map action button | `true` |
+| mapActionHandler | func | Function to handle clicks on the map action button | `null` |
+| mapActionTitle | string | String to use for the title of the map action button | `"Map"` |
 | hasHelpAction | bool | Display the help action button | `true` |
 | helpActionHandler | function | Function to handle clicks on the help action button | `null` |
+| helpActionTitle | string | String to use for the title of the help action button | `"Help"` |
 | customActions | array | An array of [custom actions](https://github.com/azavea/pwd-unitybar/blob/develop/src/js/constants.js#L19) | `null` |
 | authenticated | bool | Display the authenticated actions menu | `false` |
 | hasSettings | bool | Display the settings action | `false` |

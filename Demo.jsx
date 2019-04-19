@@ -26,7 +26,9 @@ class Demo extends Component {
         authenticated: false,
         hasSearch: true,
         hasMapAction: false,
+        mapActionTitle: 'Map',
         hasHelpAction: false,
+        helpActionTitle: 'Help',
         hasSettings: false,
         parcelViewerUrl: 'http://www.phila.gov/water/swmap/',
         creditsExplorerUrl: 'http://water.phila.gov/swexp/',
@@ -112,10 +114,24 @@ class Demo extends Component {
             }),
         );
 
+    handleChangeMapActionTitle = mapActionTitle =>
+        this.setState(state =>
+            Object.assign({}, state, {
+                mapActionTitle,
+            }),
+        );
+
     handleToggleHasHelpAction = () =>
         this.setState(state =>
             Object.assign({}, state, {
                 hasHelpAction: !state.hasHelpAction,
+            }),
+        );
+
+    handleChangeHelpActionTitle = helpActionTitle =>
+        this.setState(state =>
+            Object.assign({}, state, {
+                helpActionTitle,
             }),
         );
 
@@ -154,7 +170,9 @@ class Demo extends Component {
             selectedValue,
             authenticated,
             hasMapAction,
+            mapActionTitle,
             hasHelpAction,
+            helpActionTitle,
             hasSettings,
             parcelViewerUrl,
             creditsExplorerUrl,
@@ -185,10 +203,12 @@ class Demo extends Component {
                     authenticated={authenticated}
                     access={access}
                     hasMapAction={hasMapAction}
+                    mapActionTitle={mapActionTitle}
                     mapActionHandler={() => {
                         window.console.log('map action clicked');
                     }}
                     hasHelpAction={hasHelpAction}
+                    helpActionTitle={helpActionTitle}
                     helpActionHandler={() => {
                         window.console.log('help action clicked');
                     }}
@@ -222,7 +242,11 @@ class Demo extends Component {
                     access={access}
                     authenticated={authenticated}
                     hasMapAction={hasMapAction}
+                    mapActionTitle={mapActionTitle}
+                    changeMapActionTitle={this.handleChangeMapActionTitle}
                     hasHelpAction={hasHelpAction}
+                    helpActionTitle={helpActionTitle}
+                    changeHelpActionTitle={this.handleChangeHelpActionTitle}
                     hasSettings={hasSettings}
                     changeAppName={this.handleChangeAppName}
                     toggleHasLogo={this.handleToggleHasLogo}

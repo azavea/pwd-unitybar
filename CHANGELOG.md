@@ -1,3 +1,10 @@
+## 1.0.6
+
+- Fix a bug whereby the map and help icons wouldn't display if any text had
+been entered into the search input.
+- Fix a quirk whereby the WebpackBundleAnalyzer plugin would automatically
+open a browser tab with its report on completing a dist build.
+
 ## 1.0.5
 
 - Enable host application to set map and help button titles via

@@ -84,7 +84,7 @@ export default function AppActions({
     // the DOM if the search box is expanded and users shouldn't be able to tab
     // into them & otherwise ensure that they exist and can be tabbed into.
     const mapIconElement =
-        hasMapAction && mapActionHandler && !searchBoxValue ? (
+        hasMapAction && mapActionHandler && !searchBoxExpanded ? (
             <AppAction
                 cssClass={defaultAppActions.map.cssClass}
                 title={mapActionTitle}
@@ -94,7 +94,7 @@ export default function AppActions({
         ) : null;
 
     const helpIconElement =
-        hasHelpAction && helpActionHandler && !searchBoxValue ? (
+        hasHelpAction && helpActionHandler && !searchBoxExpanded ? (
             <AppAction
                 cssClass={defaultAppActions.help.cssClass}
                 title={helpActionTitle}
@@ -118,7 +118,7 @@ export default function AppActions({
     ) : null;
 
     const authenticatedActions =
-        authenticated && !searchBoxValue ? (
+        authenticated && !searchBoxExpanded ? (
             <AuthenticatedActionsMenu
                 authenticatedActionsOpen={authenticatedActionsOpen}
                 openAuthenticatedActions={openAuthenticatedActions}

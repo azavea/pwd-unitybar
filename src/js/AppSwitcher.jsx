@@ -18,12 +18,21 @@ export default function AppSwitcher({
             appName,
             appDescription,
             appUrl,
+            isVisible,
             secondAppName,
             secondAppDescription,
             secondAppUrl,
+            secondAppIsVisible,
         }) => {
+            if (!isVisible) {
+                return null;
+            }
+
             const secondaryApp =
-                secondAppName && secondAppDescription && secondAppUrl ? (
+                secondAppName &&
+                secondAppDescription &&
+                secondAppUrl &&
+                secondAppIsVisible ? (
                     <AppSummary
                         appSwitcherOpen={appSwitcherOpen}
                         name={secondAppName}
@@ -127,9 +136,11 @@ AppSwitcher.propTypes = {
             appHeading: string,
             appName: string,
             appUrl: string,
+            isVisible: bool,
             secondAppName: string,
             secondAppDescription: string,
             secondAppUrl: string,
+            secondAppIsVisible: bool,
         }),
     ),
 };

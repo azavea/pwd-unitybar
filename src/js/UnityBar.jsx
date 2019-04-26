@@ -151,6 +151,10 @@ class UnityBar extends Component {
             creditsExplorerUrl,
             retrofitMapUrl,
             retrofitCampaignUrl,
+            showParcelViewerLink,
+            showCreditsExplorerLink,
+            showRetrofitMapLink,
+            showRetrofitCampaignLink,
         } = this.props;
 
         const {
@@ -164,15 +168,19 @@ class UnityBar extends Component {
                 case PARCEL_VIEWER:
                     return Object.assign({}, config, {
                         appUrl: parcelViewerUrl,
+                        isVisible: showParcelViewerLink,
                     });
                 case RETROFIT_MAP:
                     return Object.assign({}, config, {
                         appUrl: retrofitMapUrl,
+                        isVisible: showRetrofitMapLink,
                     });
                 case CREDITS_EXPLORER:
                     return Object.assign({}, config, {
                         appUrl: creditsExplorerUrl,
                         secondAppUrl: retrofitCampaignUrl,
+                        isVisible: showCreditsExplorerLink,
+                        secondAppIsVisible: showRetrofitCampaignLink,
                     });
                 default:
                     return config;
@@ -310,6 +318,10 @@ UnityBar.propTypes = {
     creditsExplorerUrl: string,
     retrofitMapUrl: string,
     retrofitCampaignUrl: string,
+    showParcelViewerLink: bool,
+    showCreditsExplorerLink: bool,
+    showRetrofitMapLink: bool,
+    showRetrofitCampaignLink: bool,
 };
 
 UnityBar.defaultProps = {
@@ -347,6 +359,10 @@ UnityBar.defaultProps = {
     creditsExplorerUrl: '',
     retrofitMapUrl: '',
     retrofitCampaignUrl: '',
+    showParcelViewerLink: true,
+    showCreditsExplorerLink: true,
+    showRetrofitMapLink: true,
+    showRetrofitCampaignLink: true,
     mapActionHandler: () => null,
     helpActionHandler: () => null,
     customActions: [],

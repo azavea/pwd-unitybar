@@ -31,11 +31,43 @@ class Demo extends Component {
         helpActionTitle: 'Help',
         hasSettings: false,
         parcelViewerUrl: 'http://www.phila.gov/water/swmap/',
+        showParcelViewerLink: true,
         creditsExplorerUrl: 'http://water.phila.gov/swexp/',
+        showCreditsExplorerLink: true,
         retrofitMapUrl: 'https://www.azavea.com',
+        showRetrofitMapLink: true,
         retrofitCampaignUrl: 'https://www.azavea.com',
+        showRetrofitCampaignLink: true,
         hasAppNameClickHandler: false,
     };
+
+    handleToggleShowParcelViewerLink = () =>
+        this.setState(state =>
+            Object.assign({}, state, {
+                showParcelViewerLink: !state.showParcelViewerLink,
+            }),
+        );
+
+    handleToggleShowCreditsExplorerLink = () =>
+        this.setState(state =>
+            Object.assign({}, state, {
+                showCreditsExplorerLink: !state.showCreditsExplorerLink,
+            }),
+        );
+
+    handleToggleShowRetrofitMapLink = () =>
+        this.setState(state =>
+            Object.assign({}, state, {
+                showRetrofitMapLink: !state.showRetrofitMapLink,
+            }),
+        );
+
+    handleToggleShowRetrofitCampaignLink = () =>
+        this.setState(state =>
+            Object.assign({}, state, {
+                showRetrofitCampaignLink: !state.showRetrofitCampaignLink,
+            }),
+        );
 
     clearSearchBoxValue = () =>
         this.setState({
@@ -175,9 +207,13 @@ class Demo extends Component {
             helpActionTitle,
             hasSettings,
             parcelViewerUrl,
+            showParcelViewerLink,
             creditsExplorerUrl,
+            showCreditsExplorerLink,
             retrofitMapUrl,
+            showRetrofitMapLink,
             retrofitCampaignUrl,
+            showRetrofitCampaignLink,
             isSearching,
         } = this.state;
 
@@ -221,9 +257,13 @@ class Demo extends Component {
                     hasSearch={hasSearch}
                     searchBoxValue={searchValue}
                     parcelViewerUrl={parcelViewerUrl}
+                    showParcelViewerLink={showParcelViewerLink}
                     creditsExplorerUrl={creditsExplorerUrl}
+                    showCreditsExplorerLink={showCreditsExplorerLink}
                     retrofitMapUrl={retrofitMapUrl}
+                    showRetrofitMapLink={showRetrofitMapLink}
                     retrofitCampaignUrl={retrofitCampaignUrl}
+                    showRetrofitCampaignLink={showRetrofitCampaignLink}
                     isSearching={isSearching}
                     searchingIndicator={searchingElement}
                 />
@@ -260,6 +300,22 @@ class Demo extends Component {
                     toggleHasSearch={this.handleToggleHasSearch}
                     isSearching={isSearching}
                     toggleIsSearching={this.handleToggleIsSearching}
+                    showParcelViewerLink={showParcelViewerLink}
+                    toggleShowParcelViewerLink={
+                        this.handleToggleShowParcelViewerLink
+                    }
+                    showCreditsExplorerLink={showCreditsExplorerLink}
+                    toggleShowCreditsExplorerLink={
+                        this.handleToggleShowCreditsExplorerLink
+                    }
+                    showRetrofitCampaignLink={showRetrofitCampaignLink}
+                    toggleShowRetrofitCampaignLink={
+                        this.handleToggleShowRetrofitCampaignLink
+                    }
+                    showRetrofitMapLink={showRetrofitMapLink}
+                    toggleShowRetrofitMapLink={
+                        this.handleToggleShowRetrofitMapLink
+                    }
                 />
             </div>
         );

@@ -1,3 +1,7 @@
+## 1.0.7
+
+- Add props to enable host applications to hide links to specific other PWD apps
+
 ## 1.0.6
 
 - Fix a bug whereby the map and help icons wouldn't display if any text had

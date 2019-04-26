@@ -1,6 +1,6 @@
 {
   "name": "pwd-unitybar",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "Unified header bar for PWD Stormwater web apps",
   "main": "dist/pwd.unitybar.min.js",
   "scripts": {
@@ -65,7 +65,7 @@
     "style-loader": "0.18.2",
     "url-loader": "1.1.1",
     "webpack": "4.30.0",
-    "webpack-bundle-analyzer": "3.0.3",
+    "webpack-bundle-analyzer": "3.3.2",
     "webpack-cli": "3.2.0",
     "webpack-dev-server": "3.2.1"
   }

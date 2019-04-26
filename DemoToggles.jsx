@@ -105,6 +105,14 @@ export default function DemoToggles({
     toggleHasSearch,
     isSearching,
     toggleIsSearching,
+    showParcelViewerLink,
+    toggleShowParcelViewerLink,
+    showCreditsExplorerLink,
+    toggleShowCreditsExplorerLink,
+    showRetrofitMapLink,
+    toggleShowRetrofitMapLink,
+    showRetrofitCampaignLink,
+    toggleShowRetrofitCampaignLink,
 }) {
     const propsData = [
         {
@@ -193,6 +201,30 @@ export default function DemoToggles({
             inputType: SWITCH_INPUT,
             changeHandler: toggleIsSearching,
         },
+        {
+            label: 'showParcelViewerLink',
+            value: showParcelViewerLink,
+            inputType: SWITCH_INPUT,
+            changeHandler: toggleShowParcelViewerLink,
+        },
+        {
+            label: 'showCreditsExplorerLink',
+            value: showCreditsExplorerLink,
+            inputType: SWITCH_INPUT,
+            changeHandler: toggleShowCreditsExplorerLink,
+        },
+        {
+            label: 'showRetrofitMapLink',
+            value: showRetrofitMapLink,
+            inputType: SWITCH_INPUT,
+            changeHandler: toggleShowRetrofitMapLink,
+        },
+        {
+            label: 'showRetrofitCampaignLink',
+            value: showRetrofitCampaignLink,
+            inputType: SWITCH_INPUT,
+            changeHandler: toggleShowRetrofitCampaignLink,
+        },
     ];
 
     return (
@@ -246,4 +278,12 @@ DemoToggles.propTypes = {
     toggleHasSearch: func.isRequired,
     isSearching: bool.isRequired,
     toggleIsSearching: func.isRequired,
+    showParcelViewerLink: bool.isRequired,
+    toggleShowParcelViewerLink: func.isRequired,
+    showCreditsExplorerLink: bool.isRequired,
+    toggleShowCreditsExplorerLink: func.isRequired,
+    showRetrofitMapLink: bool.isRequired,
+    toggleShowRetrofitMapLink: func.isRequired,
+    showRetrofitCampaignLink: bool.isRequired,
+    toggleShowRetrofitCampaignLink: func.isRequired,
 };

@@ -146,6 +146,10 @@ following props:
 | signOutHandler | function | Function to handle clicking sign out | `console.log` |
 | customMenuOptions | array | An array of [custom menu options](https://github.com/azavea/pwd-unitybar/blob/develop/src/js/constants.js#L26) | `null` |
 | parcelViewerUrl | string | Link to the Stormwater Parcel Viewer website | `""` |
+| showParcelViewerLink | bool | Display a link to the Parcel Viewer | `true` |
 | creditsExplorerUrl | string | Link to the Stormwater Credits Explorer website | `""` |
+| showCreditsExplorerLink | bool | Display a link to the Credits Explorer | `true` |
 | retrofitMapUrl | string | Link to the Stormwater Connect Map website. | `""` |
+| showRetrofitMapLink | bool | Display a link to the Stormwater Connect Map site | `true` |
 | retrofitCampaignUrl | string | Link to the Stormwater Connect website. | `""` |
+| showRetrofitCampaignLink | bool | Display a link to the Stormwater Connect marketing site | `true` |

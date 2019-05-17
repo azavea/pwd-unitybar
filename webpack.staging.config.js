@@ -45,8 +45,14 @@ module.exports = {
                 options:
                 {
                     presets: [
-                        '@babel/preset-env',
                         '@babel/preset-react',
+                        [
+                            '@babel/preset-env',
+                            {
+                                useBuiltIns: 'entry',
+                                corejs: '2',
+                            },
+                        ],
                     ],
                     plugins: [
                         '@babel/plugin-proposal-class-properties',

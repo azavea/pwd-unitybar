@@ -8,11 +8,6 @@
     > .search-form {
         flex: 0 1 160px;
         margin: auto 8px auto 32px;
-
-        @include mobile {
-            margin: 0;
-            flex-basis: $pwdub-app-switcher-gutter-mobile;
-        }
     }
 
     > .link {
@@ -39,10 +34,6 @@
             width: 24px;
             height: 18px;
         }
-
-        @include mobile {
-            width: $pwdub-app-switcher-gutter-mobile;
-        }
     }
 
     > .additional-actions {
@@ -64,17 +55,5 @@
         right: 0;
         width: 90%;
         z-index: 2;
-
-        @include mobile {
-            width: 100%;
-        }
-    }
-
-    @include mobile {
-        position: absolute;
-        top: 0;
-        right: 0;
-        bottom: 0;
-        left: 0;
     }
 }

@@ -5,11 +5,6 @@
     align-items: center;
     justify-content: flex-start;
 
-    @include mobile {
-        width: $pwdub-app-switcher-gutter-mobile;
-        background-position: center;
-    }
-
     > .icon {
         position: absolute;
         top: calc(50% - 9px);
@@ -43,10 +38,6 @@
         font: inherit;
         font-size: 15px;
         color: $pwdub-black;
-
-        @include mobile {
-            @include invisible;
-        }
     }
 
     > .action {
@@ -60,6 +51,10 @@
         color: $pwdub-white;
         font: inherit;
         font-size: 15px;
+
+        @include mobile {
+            display: block;
+        }
     }
 
     > .field:focus + .action {
@@ -76,13 +71,6 @@
         @include mobile {
             right: 16px;
             left: auto;
-        }
-    }
-
-    > .icon,
-    > .icon > use > svg {
-        @include mobile {
-            fill: $pwdub-white;
         }
     }
 

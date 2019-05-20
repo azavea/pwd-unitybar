@@ -47,6 +47,7 @@
 
         @include mobile {
             width: $pwdub-app-switcher-gutter-mobile;
+            min-width: $pwdub-app-switcher-gutter-mobile;
         }
     }
 

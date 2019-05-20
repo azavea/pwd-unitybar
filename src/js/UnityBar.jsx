@@ -155,6 +155,7 @@ class UnityBar extends Component {
             showCreditsExplorerLink,
             showRetrofitMapLink,
             showRetrofitCampaignLink,
+            currentPath,
         } = this.props;
 
         const {
@@ -281,6 +282,7 @@ class UnityBar extends Component {
                     closeAllElements={this.closeAllElements}
                     searchBoxValue={searchBoxValue}
                     handleSearchBoxChange={this.handleSearchBoxChange}
+                    currentPath={currentPath}
                 />
                 <SVGIcons />
             </header>
@@ -322,6 +324,7 @@ UnityBar.propTypes = {
     showCreditsExplorerLink: bool,
     showRetrofitMapLink: bool,
     showRetrofitCampaignLink: bool,
+    currentPath: string,
 };
 
 UnityBar.defaultProps = {
@@ -369,6 +372,7 @@ UnityBar.defaultProps = {
     settingsUrl: '',
     settingsHandler: () => null,
     customMenuOptions: [],
+    currentPath: '',
 };
 
 export default onClickOutside(UnityBar);

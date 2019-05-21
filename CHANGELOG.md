@@ -1,3 +1,7 @@
+## 1.1.0
+
+- Add MobileSearchBox component to adjust search functionality on viewports < 900px wide
+
 ## 1.0.7
 
 - Add props to enable host applications to hide links to specific other PWD apps

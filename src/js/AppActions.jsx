@@ -48,6 +48,7 @@ export default function AppActions({
     closeAllElements,
     searchBoxValue,
     handleSearchBoxChange,
+    currentPath,
 }) {
     const customActionElements = (() => {
         if (searchBoxExpanded) {
@@ -114,6 +115,7 @@ export default function AppActions({
             handleSearchBoxChange={handleSearchBoxChange}
             isSearching={isSearching}
             searchingIndicator={searchingIndicator}
+            currentPath={currentPath}
         />
     ) : null;
 
@@ -201,4 +203,5 @@ AppActions.propTypes = {
     closeAllElements: func,
     searchBoxValue: string.isRequired,
     handleSearchBoxChange: func.isRequired,
+    currentPath: string.isRequired,
 };

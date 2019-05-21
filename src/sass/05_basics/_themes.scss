@@ -49,10 +49,6 @@
         > .icon,
         > .icon > use > svg {
             fill: $pwdub-blue;
-
-            @include mobile {
-                fill: $pwdub-white;
-            }
         }
 
         > .field {

@@ -153,3 +153,4 @@ following props:
 | showRetrofitMapLink | bool | Display a link to the Stormwater Connect Map site | `true` |
 | retrofitCampaignUrl | string | Link to the Stormwater Connect website. | `""` |
 | showRetrofitCampaignLink | bool | Display a link to the Stormwater Connect marketing site | `true` |
+| currentPath | string | String representing the current path of the host application | `""` |

@@ -44,7 +44,7 @@
 }
 
 @mixin restore {
-    display: initial;
+    display: inline;
 }
 
 @mixin responsive($breakpoint : $pwdub-breakpoint-mobile) {

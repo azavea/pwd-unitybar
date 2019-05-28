@@ -37,6 +37,8 @@
             color: $pwdub-white;
             font-size: 18px;
             font-weight: bold;
+            margin-top: 0;
+            margin-bottom: 0;
 
             @include responsive(800px) {
                 font-size: 16px;

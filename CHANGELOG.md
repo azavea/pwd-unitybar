@@ -1,3 +1,7 @@
+## 1.2.0
+
+- Position app switcher header text correctly on mobile
+
 ## 1.1.0
 
 - Add MobileSearchBox component to adjust search functionality on viewports < 900px wide

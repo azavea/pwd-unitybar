@@ -1,4 +1,4 @@
-import { func, oneOf, shape, string } from 'prop-types';
+import { func, node, oneOf, shape, string } from 'prop-types';
 
 export const isDevelopment =
     process && process.env && process.env.NODE_ENV === 'development';
@@ -21,6 +21,7 @@ export const customActionPropType = shape({
     icon: string.isRequired,
     title: string.isRequired,
     onClickHandler: func.isRequired,
+    customIconNode: node,
 });
 
 export const customMenuOptionPropType = shape({

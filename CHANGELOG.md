@@ -1,3 +1,9 @@
+## 1.3.0
+
+- Enable host applications to send custom React nodes in for custom actions
+- Make upgrades to package-lock.json via npm audit fix
+- Make additional upgrades using GitHub dependabot automated PRs
+
 ## 1.2.0
 
 - Position app switcher header text correctly on mobile

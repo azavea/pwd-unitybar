@@ -67,13 +67,14 @@ export default function AppActions({
                     action along with both 'hasMapAction' and 'hasHelpAction'.`);
             }
             return customActions.map(
-                ({ cssClass, icon, title, onClickHandler }) => (
+                ({ cssClass, icon, title, onClickHandler, customIconNode }) => (
                     <AppAction
                         key={title}
                         cssClass={cssClass}
                         icon={icon}
                         title={title}
                         onClickHandler={onClickHandler}
+                        customIconNode={customIconNode}
                     />
                 ),
             );

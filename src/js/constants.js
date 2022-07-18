@@ -45,10 +45,11 @@ export const pwdAppConfig = [
     },
     {
         appCSSClass: '-retrofit-developers',
-        appHeading: 'For stormwater management vendors',
+        appHeading:
+            'For those interested in stormwater retrofit project implementation',
         appName: RETROFIT_MAP,
-        appDescription: `Find commercial, industrial, and multifamily
-            properties interested in a stormwater retrofit project.`,
+        appDescription: `Create your project team for stormwater retrofit 
+            project implementation.`,
         appUrl: '',
     },
     {

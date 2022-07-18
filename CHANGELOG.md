@@ -1,3 +1,7 @@
+## 1.4.0
+
+- Update Stormwater Connect heading + desc
+
 ## 1.3.0
 
 - Enable host applications to send custom React nodes in for custom actions

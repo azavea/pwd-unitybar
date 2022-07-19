@@ -18,6 +18,10 @@ Install required dependencies by running:
 ./scripts/setup
 ```
 
+_Note:_ This project is using dependencies that are intentionally held back until a broad update can occur. As a result, some users may encounter errors with dependency installation, specifically with `node-sass` and `node-gyp`. The following changes to your local development environment should resolve these errors: 
+* Ensure your environment has Python 2 installed and the `python` command is using the Python 2.x version path. Past users have had success using [pyenv](https://github.com/pyenv/pyenv#switch-between-python-versions) to manage switching between Python versions.
+* Ensure your local Node version supports `node-sass v4.11.0`. Past users have used `nvm` to downgrade to `v11.15.0` with success.
+
 #### Development
 
 Run a demo version via webpack-dev-server using:
